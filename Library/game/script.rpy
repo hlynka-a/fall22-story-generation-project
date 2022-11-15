@@ -40,8 +40,18 @@ label start:
             $ priorities = ["Health","Study","Social"]
             show screen statement_bars
             call imagemap_uni()
+        "Andrew's Tests":
+            call andrews_tests_menu()
 
 
+    return
+
+label andrews_tests_menu:
+    menu:
+        "Dialogue Test":
+            call test_dialogue_screen()
+        "Back":
+            call start()
     return
 
 label start_intro:

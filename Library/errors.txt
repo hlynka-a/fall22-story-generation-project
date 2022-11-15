@@ -2,7 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 31: Indentation mismatch.
+File "game/py_script_dialogue.rpy", line 141: keyword argument repeated: current_day
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Tue Nov  8 09:37:57 2022
+Mon Nov 14 20:12:02 2022
