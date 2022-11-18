@@ -44,15 +44,20 @@ label start:
             call andrews_tests_menu()
 
 
+
     return
 
 label andrews_tests_menu:
     menu:
         "Dialogue Test":
             call test_dialogue_screen()
+        "Timer Test":
+            call test_timer_screen()
         "Back":
             call start()
     return
+
+
 
 label start_intro:
     scene bg_clock
