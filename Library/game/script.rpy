@@ -51,6 +51,8 @@ label andrews_tests_menu:
     menu:
         "Dialogue Test":
             call test_dialogue_screen()
+        "TRACERY Dialogue Test":
+            call test_dialogue_tracery_screen()
         "Timer Test":
             call test_timer_screen()
         "Back":
