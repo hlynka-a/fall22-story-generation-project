@@ -15,6 +15,7 @@ init python:
     currentTime = timeOfDay[0];
     currentTimeIndex = 0;
     currentDayIndex = 0;
+    numOfStudents = 5;
     hello_world = "hello world!";
 
 
@@ -43,6 +44,18 @@ init python:
         my_schedule.append([timeOfDay[1], locations[0]]);
         my_schedule.append([timeOfDay[2], locations[2]]);
         character_schedules.append(my_schedule);
+
+        my_schedule = [];
+        my_schedule.append([timeOfDay[0], locations[2]]);
+        my_schedule.append([timeOfDay[1], locations[2]]);
+        my_schedule.append([timeOfDay[2], locations[1]]);
+        character_schedules.append(my_schedule);
+
+        my_schedule = [];
+        my_schedule.append([timeOfDay[0], locations[2]]);
+        my_schedule.append([timeOfDay[1], locations[0]]);
+        my_schedule.append([timeOfDay[2], locations[1]]);
+        character_schedules.append(my_schedule);
         #my_schedule.append([day[0],timeOfDay[0], locations[1]]);
         #my_schedule.append([day[0],timeOfDay[1], locations[0]]);
         #my_schedule.append([day[0],timeOfDay[2], locations[2]]);
@@ -60,7 +73,7 @@ init python:
         global currentDayIndex;
         global currentDay;
         currentTimeIndex = currentTimeIndex + 1;
-        if (currentTimeIndex >= 3):
+        if (currentTimeIndex >= numOfStudents):
             currentTimeIndex = 0;
             currentDayIndex = currentDayIndex + 1;
             if (currentDayIndex >= 5):

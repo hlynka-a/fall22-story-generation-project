@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 88: expected menuitem
-    return
-    ^
+File "game/StandardEventsGenerator.rpy", line 13: expected statement.
+    events_library += (event_name,event_time)
+                   ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Thu Nov 17 12:53:19 2022
+Mon Nov 21 18:32:04 2022
