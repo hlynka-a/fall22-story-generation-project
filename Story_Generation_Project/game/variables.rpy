@@ -28,4 +28,15 @@ default Chunks = ["Morning","Afternoon","Evening","Night"]
 ###     Call '$ dialogue = getDialogue()' to get 1 line of (non-Tracery) dialogue.
 ###     Call '$ dialogue = getTraceryDialogue()' to get 1 line of (Tracery) dialogue.
 
+### Location:
+###     Location = "Classroom"      (a string, can be ["Classroom", "Library", "Park", "Coffee Shop", "Cafeteria", "Shop", "Lounge", "Residence"], more can be added.)
 default Location = "Classroom"
+default LocationList = ["Classroom","Library","Park","Coffee Shop","Cafeteria","Shop","Lounge","Residence"]
+
+### Player Stats:
+###     Player_study = [0 - 100]
+###     Player_social = [0 - 100]
+###     Player_health = [0 - 100]
+default Player_study = 50
+default Player_social = 50
+default Player_health = 50

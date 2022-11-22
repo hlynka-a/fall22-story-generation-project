@@ -40,10 +40,11 @@ label exit_timer_screen:
 
 label check_events_timer:
     # hardcode events here, or iterate through a list of them in a loop
-    if (Hours == 11 and Minutes >= 10 and Minutes <= 20):
-        $ renpy.notify("Hi!");
-    if (Hours == 13 and Minutes >= 35 and Minutes <= 40):
-        $ renpy.notify("Hello!");
+    #if (Hours == 11 and Minutes >= 10 and Minutes <= 20):
+    #    $ renpy.notify("Hi!");
+    #if (Hours == 13 and Minutes >= 35 and Minutes <= 40):
+    #    $ renpy.notify("Hello!");
+    call check_events
     return
 
 label update_time:
@@ -82,7 +83,7 @@ label increase_time(time_to_add):
 
 label decrease_time(time_to_remove):
     #$ Minutes = Minutes - time_to_remove
-    $ Hours = Hours - time_to_add
+    $ Hours = Hours - time_to_remove
     call current_time()
     call refresh_current_screen()
 
@@ -130,6 +131,7 @@ label current_time:
     if Hours > 23:
         $ Hours = 0
         $ Days += 1
+        $ event_notify = False
     if Days > 6:
         $ Days = 0
     # if Player is increasing / decreasing time, be able to handle it below:

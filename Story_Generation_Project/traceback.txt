@@ -1,34 +1,1046 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script_dialogue.rpy", line 24, in script call
-    call test_dialogue_screen1()
-  File "game/script_dialogue.rpy", line 70, in script
-    $ updateDialogueVariables();
-  File "game/script_dialogue.rpy", line 70, in <module>
-    $ updateDialogueVariables();
-  File "game/py_script_dialogue.rpy", line 109, in updateDialogueVariables
-    temp_current_location = Location;
-NameError: name 'Location' is not defined
+  File "game/ScheduleGenerator.rpy", line 65, in script call
+    call screen background_screen()
+  File "game/Timer.rpy", line 58, in script call
+    call check_events_timer()
+  File "game/Timer.rpy", line 47, in script call
+    call check_events
+  File "game/ScheduleGenerator.rpy", line 72, in script call
+    call event_notify_today
+  File "game/ScheduleGenerator.rpy", line 90, in script call
+    "[output_event_info]"
+  File "game/Timer.rpy", line 58, in script call
+    call check_events_timer()
+  File "game/Timer.rpy", line 47, in script call
+    call check_events
+  File "game/ScheduleGenerator.rpy", line 72, in script call
+    call event_notify_today
+  File "game/ScheduleGenerator.rpy", line 90, in script call
+    "[output_event_info]"
+  File "game/Timer.rpy", line 58, in script call
+    call check_events_timer()
+  File "game/Timer.rpy", line 47, in script call
+    call check_events
+  File "game/ScheduleGenerator.rpy", line 72, in script call
+    call event_notify_today
+  File "game/ScheduleGenerator.rpy", line 90, in script call
+    "[output_event_info]"
+  File "game/Timer.rpy", line 58, in script call
+    call check_events_timer()
+  File "game/Timer.rpy", line 47, in script call
+    call check_events
+  File "game/ScheduleGenerator.rpy", line 72, in script call
+    call event_notify_today
+  File "game/ScheduleGenerator.rpy", line 90, in script call
+    "[output_event_info]"
+  File "game/Timer.rpy", line 58, in script call
+    call check_events_timer()
+  File "game/Timer.rpy", line 47, in script call
+    call check_events
+  File "game/ScheduleGenerator.rpy", line 72, in script call
+    call event_notify_today
+  File "game/ScheduleGenerator.rpy", line 90, in script call
+    "[output_event_info]"
+  File "game/Timer.rpy", line 58, in script call
+    call check_events_timer()
+  File "game/Timer.rpy", line 47, in script call
+    call check_events
+  File "game/ScheduleGenerator.rpy", line 72, in script call
+    call event_notify_today
+  File "game/ScheduleGenerator.rpy", line 90, in script call
+    "[output_event_info]"
+  File "game/Timer.rpy", line 58, in script call
+    call check_events_timer()
+  File "game/Timer.rpy", line 47, in script call
+    call check_events
+  File "game/ScheduleGenerator.rpy", line 72, in script call
+    call event_notify_today
+  File "game/ScheduleGenerator.rpy", line 90, in script call
+    "[output_event_info]"
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 86, in script
+    $ Hours = Hours - time_to_add
+  File "game/Timer.rpy", line 86, in <module>
+    $ Hours = Hours - time_to_add
+NameError: name 'time_to_add' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script_dialogue.rpy", line 24, in script call
-    call test_dialogue_screen1()
-  File "game/script_dialogue.rpy", line 70, in script
-    $ updateDialogueVariables();
+  File "game/ScheduleGenerator.rpy", line 65, in script call
+    call screen background_screen()
+  File "game/Timer.rpy", line 58, in script call
+    call check_events_timer()
+  File "game/Timer.rpy", line 47, in script call
+    call check_events
+  File "game/ScheduleGenerator.rpy", line 72, in script call
+    call event_notify_today
+  File "game/ScheduleGenerator.rpy", line 90, in script call
+    "[output_event_info]"
+  File "game/Timer.rpy", line 58, in script call
+    call check_events_timer()
+  File "game/Timer.rpy", line 47, in script call
+    call check_events
+  File "game/ScheduleGenerator.rpy", line 72, in script call
+    call event_notify_today
+  File "game/ScheduleGenerator.rpy", line 90, in script call
+    "[output_event_info]"
+  File "game/Timer.rpy", line 58, in script call
+    call check_events_timer()
+  File "game/Timer.rpy", line 47, in script call
+    call check_events
+  File "game/ScheduleGenerator.rpy", line 72, in script call
+    call event_notify_today
+  File "game/ScheduleGenerator.rpy", line 90, in script call
+    "[output_event_info]"
+  File "game/Timer.rpy", line 58, in script call
+    call check_events_timer()
+  File "game/Timer.rpy", line 47, in script call
+    call check_events
+  File "game/ScheduleGenerator.rpy", line 72, in script call
+    call event_notify_today
+  File "game/ScheduleGenerator.rpy", line 90, in script call
+    "[output_event_info]"
+  File "game/Timer.rpy", line 58, in script call
+    call check_events_timer()
+  File "game/Timer.rpy", line 47, in script call
+    call check_events
+  File "game/ScheduleGenerator.rpy", line 72, in script call
+    call event_notify_today
+  File "game/ScheduleGenerator.rpy", line 90, in script call
+    "[output_event_info]"
+  File "game/Timer.rpy", line 58, in script call
+    call check_events_timer()
+  File "game/Timer.rpy", line 47, in script call
+    call check_events
+  File "game/ScheduleGenerator.rpy", line 72, in script call
+    call event_notify_today
+  File "game/ScheduleGenerator.rpy", line 90, in script call
+    "[output_event_info]"
+  File "game/Timer.rpy", line 58, in script call
+    call check_events_timer()
+  File "game/Timer.rpy", line 47, in script call
+    call check_events
+  File "game/ScheduleGenerator.rpy", line 72, in script call
+    call event_notify_today
+  File "game/ScheduleGenerator.rpy", line 90, in script call
+    "[output_event_info]"
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 59, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 68, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 86, in script
+    $ Hours = Hours - time_to_add
   File "C:\Users\hlynk\OneDrive\Desktop\UNIVERSITY\PhD_Calreton\Classes\F22_COMP_5900_J_game_dev_technologies\renpy-8.0.3-sdk.7z\renpy-8.0.3-sdk\renpy\ast.py", line 1131, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Users\hlynk\OneDrive\Desktop\UNIVERSITY\PhD_Calreton\Classes\F22_COMP_5900_J_game_dev_technologies\renpy-8.0.3-sdk.7z\renpy-8.0.3-sdk\renpy\python.py", line 1061, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/script_dialogue.rpy", line 70, in <module>
-    $ updateDialogueVariables();
-  File "game/py_script_dialogue.rpy", line 109, in updateDialogueVariables
-    temp_current_location = Location;
-NameError: name 'Location' is not defined
+  File "game/Timer.rpy", line 86, in <module>
+    $ Hours = Hours - time_to_add
+NameError: name 'time_to_add' is not defined
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.0.3.22090809
 Story_Generation_Project 1.0
-Mon Nov 21 22:20:02 2022
+Tue Nov 22 08:10:57 2022
