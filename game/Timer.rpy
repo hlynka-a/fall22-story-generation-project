@@ -38,10 +38,11 @@ label exit_timer_screen:
 
 label check_events_timer:
     # hardcode events here, or iterate through a list of them in a loop
-    if (Minutes >= 10 and Minutes <= 20):
-        $ renpy.notify("Hi!");
-    if (Minutes >= 35 and Minutes <= 40):
-        $ renpy.notify("Hello!");
+    #if (Minutes >= 10 and Minutes <= 20):
+    #    $ renpy.notify("Hi!");
+    #if (Minutes >= 35 and Minutes <= 40):
+    #    $ renpy.notify("Hello!");
+    call check_events
     return
 
 label update_time:
@@ -123,6 +124,11 @@ label current_time:
     if Hours > 23:
         $ Hours = 0
         $ Days += 1
+
+        $ event_notify = False
+
+
+
     if Days > 6:
         $ Days = 0
     if Hours >= 5 and Hours < 12:
