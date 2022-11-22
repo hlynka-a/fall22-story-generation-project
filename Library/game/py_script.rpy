@@ -1,4 +1,7 @@
 init python:
+
+    import math;
+
     def my_func_v01():
         print("This is a function called 'my_funcv01()'")
         #show eileen happy

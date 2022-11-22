@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/py_script_dialogue_tracery.rpy", line 27: invalid syntax
-                'should':['should', 'ought to', 'might want to','must'],
-                 ^
-    
+File "game/script.rpy", line 74: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    "Back"
+          ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Fri Nov 18 23:22:21 2022
+Mon Nov 21 21:17:19 2022

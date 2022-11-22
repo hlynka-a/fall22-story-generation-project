@@ -1,39 +1,62 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00mixers.rpy", line 53, in script
-    python hide:
-  File "renpy/common/00mixers.rpy", line 53, in script
-    python hide:
-  File "renpy/common/00mixers.rpy", line 53, in <module>
-    python hide:
-  File "renpy/common/00mixers.rpy", line 55, in _execute_python_hide
-    if not renpy.music.channel_defined("movie"):
-AttributeError: module 'renpy' has no attribute 'music'
+  File "game/Timer.rpy", line 15, in script call
+    call screen background_screen()
+  File "game/Timer.rpy", line 57, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 66, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 57, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 66, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 57, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 66, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 57, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 66, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 78, in script
+    $ Hour = Hour + time_to_add
+  File "game/Timer.rpy", line 78, in <module>
+    $ Hour = Hour + time_to_add
+NameError: name 'Hour' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\Users\hlynk\OneDrive\Desktop\UNIVERSITY\PhD_Calreton\Classes\F22_COMP_5900_J_game_dev_technologies\renpy-8.0.3-sdk.7z\renpy-8.0.3-sdk\renpy\bootstrap.py", line 277, in bootstrap
-    renpy.main.main()
-  File "C:\Users\hlynk\OneDrive\Desktop\UNIVERSITY\PhD_Calreton\Classes\F22_COMP_5900_J_game_dev_technologies\renpy-8.0.3-sdk.7z\renpy-8.0.3-sdk\renpy\main.py", line 558, in main
-    renpy.game.context().run(node)
-  File "renpy/common/00mixers.rpy", line 53, in script
-    python hide:
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/site-packages/future/utils/__init__.py", line 441, in raise_
-  File "renpy/common/00mixers.rpy", line 53, in script
-    python hide:
+  File "game/Timer.rpy", line 15, in script call
+    call screen background_screen()
+  File "game/Timer.rpy", line 57, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 66, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 57, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 66, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 57, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 66, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 57, in script call
+    call refresh_current_screen()
+  File "game/Timer.rpy", line 66, in script call
+    $ renpy.call_screen("%s"%(current_screen_name))
+  File "game/Timer.rpy", line 78, in script
+    $ Hour = Hour + time_to_add
   File "C:\Users\hlynk\OneDrive\Desktop\UNIVERSITY\PhD_Calreton\Classes\F22_COMP_5900_J_game_dev_technologies\renpy-8.0.3-sdk.7z\renpy-8.0.3-sdk\renpy\ast.py", line 1131, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Users\hlynk\OneDrive\Desktop\UNIVERSITY\PhD_Calreton\Classes\F22_COMP_5900_J_game_dev_technologies\renpy-8.0.3-sdk.7z\renpy-8.0.3-sdk\renpy\python.py", line 1061, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "renpy/common/00mixers.rpy", line 53, in <module>
-    python hide:
-  File "renpy/common/00mixers.rpy", line 55, in _execute_python_hide
-    if not renpy.music.channel_defined("movie"):
-AttributeError: module 'renpy' has no attribute 'music'
+  File "game/Timer.rpy", line 78, in <module>
+    $ Hour = Hour + time_to_add
+NameError: name 'Hour' is not defined
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.0.3.22090809
-Library 1.0
-Fri Nov 18 20:55:01 2022
+Story_Generation_Project 1.0
+Mon Nov 21 21:40:40 2022
