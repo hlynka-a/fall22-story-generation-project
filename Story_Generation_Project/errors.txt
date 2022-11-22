@@ -1,0 +1,11 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/NPC_object.rpy", line 44: invalid syntax
+        $ length_of_NPC_list = len(NPC_list)
+         ^
+    
+
+Ren'Py Version: Ren'Py 8.0.3.22090809
+Tue Nov 22 14:30:53 2022
