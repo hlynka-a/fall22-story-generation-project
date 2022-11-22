@@ -1,4 +1,4 @@
-Tue Nov 22 09:18:25 2022
+Tue Nov 22 14:31:37 2022
 Windows-10-10.0.22621
 Ren'Py 8.0.3.22090809
  
@@ -45,19 +45,5 @@ Vendor: "b'Google Inc.'"
 Renderer: b'ANGLE (Intel(R) Iris(R) Xe Graphics Direct3D11 vs_5_0 ps_5_0)'
 Version: b'OpenGL ES 3.0.0 (ANGLE 2.1.0.a4b21cf26074)'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1372, 772) drawable=(1372, 772)
+Screen sizes: virtual=(1920, 1080) physical=(1739, 978) drawable=(1739, 978)
 Maximum texture size: 4096x4096
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.01s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.01s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s

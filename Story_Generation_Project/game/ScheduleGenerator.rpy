@@ -70,18 +70,18 @@ define event_notify = False
 
 label check_events:
     call event_notify_today
-    $ e = 0
-    while e < len(Events_library):
-        if Events_library[e].eventcheck(WeekDays[Days],Hours,Minutes):
-            $ output_event_info = Events_library[e].event_name
+    $ ee = 0
+    while ee < len(Events_library):
+        if Events_library[ee].eventcheck(WeekDays[Days],Hours,Minutes):
+            $ output_event_info = Events_library[ee].event_name
             $ output_event_info += " happens now."
             $ renpy.notify(output_event_info)
-        if Events_library[e].eventinactive(WeekDays[Days],Hours,Minutes):
-            $ output_event_info = Events_library[e].event_name
+        if Events_library[ee].eventinactive(WeekDays[Days],Hours,Minutes):
+            $ output_event_info = Events_library[ee].event_name
             $ output_event_info += " ends now."
             #"[output_event_info]"
             $ renpy.notify(output_event_info)
-        $ e += 1
+        $ ee += 1
     return
 
 label event_notify_today:

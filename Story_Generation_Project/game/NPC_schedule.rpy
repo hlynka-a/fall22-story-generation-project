@@ -3,7 +3,7 @@ label NPC_schedule:
     e " Display the NPC generation and schedule."
     menu:
         "Create_NPC":
-            call create_NPC 
+            call create_NPC
         "Quit":
             jump start
     return
@@ -22,14 +22,14 @@ label create_NPC:
 
 label create_NPC_image:
     call screen NPC_image
-    return 
+    return
 
 screen NPC_image:
     imagebutton:
         xpos 0.8
         ypos 0.5
         idle "logo base"
-        hover "logo bw" 
+        hover "logo bw"
         hovered Show("NPC_statements_bars")
         unhovered Hide("NPC_statements_bars")
 
@@ -46,11 +46,11 @@ label init_NPC_statements:
     define loc_classrm = renpy.random.randint(0,1)
 
     # The schedule here is still incomplete; I will create one based on the time chunks.
-    define daily_locations = [loc_lib,loc_classrm]
-    return 
+    define daily_locations = [1,loc_classrm]
+    return
 
 screen NPC_statements_bars():
-   
+
     $ NPC_study = NPC_study_local
     $ NPC_social = NPC_social_local
     $ NPC_health = NPC_health_local
@@ -60,21 +60,17 @@ screen NPC_statements_bars():
         xsize 500
         vbox:
             spacing 5
-            
+
             bar value ScreenVariableValue("NPC_study", 100) style "bar"
             text 'Study: [NPC_study]' align(0,50)
             bar value ScreenVariableValue("NPC_social", 100) style "bar"
             text 'Social: [NPC_social]' align(0,80)
             bar value ScreenVariableValue("NPC_health", 100) style "bar"
             text 'Health: [NPC_health]' align(0,80)
-return 
+return
 
 label talk_to_NPC:
     show logo base with dissolve
-    e "Conversation happens here." 
+    e "Conversation happens here."
     jump NPC_schedule
     return
-        
-
-
-

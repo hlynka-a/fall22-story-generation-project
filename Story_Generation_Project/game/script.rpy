@@ -47,6 +47,7 @@ label start:
     scene bg_Uni
     menu:
         "Start Game":
+            $ renpy.notify("(Start Game not complete yet, just go to 'Player_settings')")
             jump Player_settings
         # add option here to "Start Game" in middle of the story, to be able to skip intro and early parts of the game
         "Debug Features Menu":
@@ -85,4 +86,6 @@ label Player_settings:
             jump start_setting
         "Skip Setting":
             jump statement_display
+        "Back":
+            jump start
     return

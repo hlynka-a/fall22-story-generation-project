@@ -2,9 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 74: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
-    "Back"
-          ^
+File "game/NPC_object.rpy", line 44: invalid syntax
+        $ length_of_NPC_list = len(NPC_list)
+         ^
+    
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Mon Nov 21 21:17:19 2022
+Tue Nov 22 14:30:53 2022
