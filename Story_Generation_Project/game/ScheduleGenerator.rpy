@@ -1,5 +1,5 @@
 # Minutes = 0 Hours = 8 Parts = 0 Days = 0 WeekDays = ["Mon","Tue","Wed","Thu","Fri"] Chunks = ["Morning","Afternoon","Evening","Night"]
-$ WeekDays = ["Mon","Tue","Wed","Thu","Fri"]
+# $ WeekDays = ["Mon","Tue","Wed","Thu","Fri"]
 init python:
     class Event(object):
         def __init__(self, event_name = "",event_day = 0,event_hstarts = 1,event_mstatrs = 0, event_hends = 1, event_mends = 0,event_active = False):

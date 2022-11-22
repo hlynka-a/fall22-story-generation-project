@@ -11,6 +11,18 @@ default Minutes = 0
 default WeekDays = ["Mon","Tue","Wed","Thu","Fri"]
 default Chunks = ["Morning","Afternoon","Evening","Night"]
 
+### Normal Events:
+###     Access schedule of Player events from:
+###         Events_library = []                 # a Python data object with sub-objects (listed below)
+###             Events_library[0].event_name = "somestring"
+###             Events_library[0].event_day = [0 - 5]
+###             Events_library[0].event_hstarts = [0 - 23]
+###             Events_library[0].event_mstarts = [0 - 59]
+###             Events_library[0].event_hends = [0 - 23]
+###             Events_library[0].event_mends = [0 - 59]
+###             Events_library[0].event_active = [True or False]
+
+
 ### Normal Dialogue with NPC:
 ###     Call '$ initializeDialogue()' once at beginning of the game (for non-Tracery dialogue).
 ###     BEFORE calling to get a line of dialogue, first update the following variables:
@@ -40,3 +52,14 @@ default LocationList = ["Classroom","Library","Park","Coffee Shop","Cafeteria","
 default Player_study = 50
 default Player_social = 50
 default Player_health = 50
+
+### NPC Stats:
+###     Access NPC elements from:
+###         NPC_list = []                               # a Python data object with sub-objects (listed below)
+###             NPC_list[0].npc_firstname = "somestring"
+###             NPC_list[0].npc_lastname = "somestring"
+###             NPC_list[0].npc_study = [0 - 100]
+###             NPC_list[0].npc_social = [0 - 100]
+###             NPC_list[0].npc_health = [0 - 100]
+###             NPC_list[0].Location = "Classroom"      # some location from LocationList
+###             NPC_list[0].Events_library = []         # similar to Player's Events_library, but does not notify screen when change occurs, and changes location attribute of NPC
