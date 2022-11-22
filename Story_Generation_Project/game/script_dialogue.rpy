@@ -58,12 +58,16 @@ label update_test_stat():
     elif (statType == 7):
         if (temp_current_location == "Library"):
             $ temp_current_location = "Classroom";
-        else:
+        elif (temp_current_location == "Classroom"):
             $ temp_current_location = "Library";
     call test_dialogue_screen1()
 
 label reset_test_dialogue():
     $ initializeDialogue()
+    call test_dialogue_screen1()
+
+label update_test_dialogue_real_variables():
+    $ updateDialogueVariables();
     call test_dialogue_screen1()
 
 screen test_dialogue_screen():
@@ -189,3 +193,8 @@ screen test_dialogue_screen():
         background "#000"
         xpos 1600
         ypos 500
+    textbutton "{size=28}{color=#FFF}Update Real Variables{/color}{/size}":
+        background "#000"
+        xpos 1600
+        ypos 550
+        action Jump("update_test_dialogue_real_variables")

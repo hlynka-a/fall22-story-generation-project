@@ -4,10 +4,11 @@ transform alpha_dissolve:
     on hide:
         linear 0.5 alpha 0
 
-label dispaly_timer:
+label display_timer:
 
     $ time_to_exit = False
     $ Minutes = 0
+    $ Hours = 0
 
     scene bg_class
     show screen timer_logic()

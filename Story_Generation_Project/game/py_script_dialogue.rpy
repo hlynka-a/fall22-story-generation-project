@@ -98,7 +98,21 @@ init python:
     temp_this_social=50;
     temp_this_health=50;
     temp_current_day=0;
+    temp_current_hour=0;
+    temp_current_minute=0;
     temp_current_location="Library";
+
+    def updateDialogueVariables():
+        global temp_current_day;
+        global temp_current_hour;
+        global temp_current_minute;
+        global temp_current_location;
+
+        temp_current_day = Days;
+        temp_current_hour = Hours;
+        temp_current_minute = Minutes;
+        temp_current_location = Location;
+        #renpy.notify("updateDialogueVariables() called. Location = "+ temp_current_location);
 
     def initializeDialogue():
         global dialogue_choices;
@@ -170,7 +184,7 @@ init python:
             output_string="People say I'm not social enough, but my grades are more important than having fun."));
         dialogue_choices.append(DialogueOptionClass(dialogue_id="id_119",
             this_study_range=[70,100],this_health_range=[0,30],required_location=["Classroom"],
-            output_string="I've been up all night studying for today's class. I'm exhausted, but I think it was worth it."));                                                                                      
+            output_string="I've been up all night studying for today's class. I'm exhausted, but I think it was worth it."));
         dialogue_choices.append(DialogueOptionClass(dialogue_id="id_000",
             output_string="This is an initialized dialogue line."));
         dialogue_choices.append(DialogueOptionClass(dialogue_id="id_001",

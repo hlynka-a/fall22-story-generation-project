@@ -30,12 +30,12 @@ default NPC_study_local = 10
 default NPC_social_local = 10
 default NPC_health_local = 100
 
-default Minutes = 0
-default Hours = 8
+#default Minutes = 0
+#default Hours = 8
 default Parts = 0
-default Days = 0
-default WeekDays = ["Mon","Tue","Wed","Thu","Fri"]
-default Chunks = ["Morning","Afternoon","Evening","Night"]
+#default Days = 0
+#default WeekDays = ["Mon","Tue","Wed","Thu","Fri"]
+#default Chunks = ["Morning","Afternoon","Evening","Night"]
 
 
 default no_event = True
@@ -68,7 +68,7 @@ label Debug_features_menu:
         "Generate NPC":
             jump NPC_schedule
         "Timer Test":
-            jump dispaly_timer
+            jump display_timer
         "Generate Schedule":
             jump schedule_generator
         "Dialogue Test":
