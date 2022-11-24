@@ -68,6 +68,8 @@ label Debug_features_menu:
             jump imagemap_uni
         "Generate NPC":
             jump NPC_schedule
+        "Generate NPC v2 (schedule)":
+            jump NPC_schedule_v2
         "Timer Test":
             jump display_timer
         "Generate Schedule":
