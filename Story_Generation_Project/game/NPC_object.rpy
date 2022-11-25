@@ -21,10 +21,16 @@ init python:
         def defineRandomNPC(self):
             # (don't just get name from male list - need to check if NPC is male or female, and get appropriate name.)
             self.npc_firstname = random.choice(first_name_male_list);
-            self.npc_lastname = random.choice(last_name_female_list);
-            self.Events_library = defineRandomNPCSchedule();
+            self.npc_lastname = random.choice(last_name_list);
+            self.Events_library = self.defineRandomNPCSchedule();
+            randInt = random.randrange(1,10);
+            self.npc_study = randInt * 10;
+            randInt = random.randrange(1,10);
+            self.npc_social = randInt * 10;
+            randInt = random.randrange(1,10);
+            self.npc_health = randInt * 10;
             return self;
-        def defineRandomNPCSchedule():
+        def defineRandomNPCSchedule(self):
             randomSchedule = [];
             # use ScheduleGenerator.rpy as example
             # below events should be randomized more - start/end time should be randomized, which location to go to should be randomized.
@@ -33,18 +39,18 @@ init python:
             if (randInt % 3 == 0):
                 randomSchedule.append(Event("Library", "Mon", 8, 0, 10, 0, False));
                 randomSchedule.append(Event("Classroom","Mon", 10,0,12,0,False));
-                randomSchedule.append(Event("Cafe","Mon",12,0,2,0,False));
-                randomSchedule.append(Event("Park","Mon",2,0,5,0,False));
+                randomSchedule.append(Event("Cafe","Mon",12,0,14,0,False));
+                randomSchedule.append(Event("Park","Mon",14,0,17,0,False));
             elif (randInt % 3 == 1):
                 randomSchedule.append(Event("Library", "Mon", 7, 0, 9, 0, False));
                 randomSchedule.append(Event("Classroom","Mon", 10,0,12,0,False));
-                randomSchedule.append(Event("Park","Mon",12,0,2,0,False));
-                randomSchedule.append(Event("Cafe","Mon",2,0,5,0,False));
+                randomSchedule.append(Event("Park","Mon",12,0,14,0,False));
+                randomSchedule.append(Event("Cafe","Mon",14,0,17,0,False));
             elif (randInt % 3 == 2):
                 randomSchedule.append(Event("Cafe", "Mon", 7, 0, 9, 0, False));
                 randomSchedule.append(Event("Library","Mon", 9,0,11,0,False));
-                randomSchedule.append(Event("Classroom","Mon",11,0,1,0,False));
-                randomSchedule.append(Event("Park","Mon",1,0,5,0,False));
+                randomSchedule.append(Event("Classroom","Mon",11,0,13,0,False));
+                randomSchedule.append(Event("Park","Mon",13,0,17,0,False));
             return randomSchedule;
         def updateNPCStat(self, study_add=0, social_add=0, health_add=0):
             self.npc_study = self.npc_study + study_add;
@@ -54,6 +60,7 @@ init python:
 
     NPC_list = [];
 
+    # (names taken from top 100 baby names in USA - please add more interesting names to these lists.)
     first_name_male_list = ["James","William","Oliver","Henry","Jack","Alex","John","David","Tom"];
     first_name_female_list = ["Olivia","Emma","Sophia","Emily","Mila","Lucy","Alex","Alice","Claire"];
     last_name_list = ["A","B","C","D","E","F","G","H","I","J","K","L",
@@ -63,8 +70,10 @@ init python:
     # Social = Park, Coffee House, Cafeteria, Clubhouse, Pub
     # Athletic = Swimming Pool, Park, Gym, Sports Grounds
     # Sleepy = Residence, Classroom
-    # (How do these affect stat values for NPC?
-    #   What takes priority - personality or current stat values that need to increase?)
+    #       (How do these affect stat values for NPC?
+    #           What takes priority - personality or current stat values that need to increase?)
+    #           Should "mood" also be a variable?
+    #           Does mood change based on whether they go to places they like that day, or how the Player talks to them?
 
 
 
@@ -77,4 +86,38 @@ init python:
             NPC_list.append(newNPC);
             i_counter = i_counter + 1
         endTime = time.time();
-        renpy.notify("Time it took to generate " + len(NPC_list) + " NPC's = " + (endTime - startTime) + " seconds.");
+        renpy.notify("Time it took to generate " + str(len(NPC_list)) + " NPC's = " + str(endTime - startTime) + " seconds.");
+
+    def get_NPCs_at_location(someLocation):
+        list_of_NPCs_at_location = []
+        npc_index = 0
+        while (npc_index < len(NPC_list)):
+            if (NPC_list[npc_index].Location == someLocation):
+                list_of_NPCs_at_location.append(NPC_list[npc_index])
+            npc_index = npc_index + 1
+        return list_of_NPCs_at_location
+
+label check_NPC_events():
+    $ npc_index = 0
+    while (npc_index < len(NPC_list)):
+        $ event_index = 0
+        $ location_was_set = False
+        while event_index < len(NPC_list[npc_index].Events_library):
+            if NPC_list[npc_index].Events_library[event_index].eventcheck(WeekDays[Days],Hours,Minutes):
+                $ output_event_info = NPC_list[npc_index].Events_library[event_index].event_name
+                #$ output_event_info += " - NPC (" + NPC_list[npc_index].npc_firstname + " " + NPC_list[npc_index].npc_lastname + ") happens now."
+                #$ renpy.notify(output_event_info)
+            if NPC_list[npc_index].Events_library[event_index].eventinactive(WeekDays[Days],Hours,Minutes):
+                $ output_event_info = NPC_list[npc_index].Events_library[event_index].event_name
+                #$ output_event_info += " - NPC (" + NPC_list[npc_index].npc_firstname + " " + NPC_list[npc_index].npc_lastname + ") ends now."
+                #"[output_event_info]"
+                #$ renpy.notify(output_event_info)
+            if NPC_list[npc_index].Events_library[event_index].event_active == True:
+                $ NPC_list[npc_index].Location = NPC_list[npc_index].Events_library[event_index].event_name
+                $ location_was_set = True
+            $ event_index += 1
+        # If no scheduled-location for NPC, make them go to Residence by default
+        if (location_was_set == False):
+            $ NPC_list[npc_index].Location = "Residence"
+        $ npc_index = npc_index + 1
+    return

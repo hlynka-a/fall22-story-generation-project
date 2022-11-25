@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/NPC_object.rpy", line 44: invalid syntax
-        $ length_of_NPC_list = len(NPC_list)
-         ^
-    
+File "game/NPC_schedule_v2.rpy", line 111: 'return' is not a keyword argument or valid child for the screen statement.
+    return
+          ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Tue Nov 22 14:30:53 2022
+Fri Nov 25 00:07:56 2022

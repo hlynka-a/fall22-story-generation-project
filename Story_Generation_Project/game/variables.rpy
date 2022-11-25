@@ -63,3 +63,16 @@ default Player_health = 50
 ###             NPC_list[0].npc_health = [0 - 100]
 ###             NPC_list[0].Location = "Classroom"      # some location from LocationList
 ###             NPC_list[0].Events_library = []         # similar to Player's Events_library, but does not notify screen when change occurs, and changes location attribute of NPC
+
+### Background screen:
+###     Used to be able to refresh current screen (must track what the correct background image is - necessary for real-time cloeck refresh).
+###     To refresh the correct current screen, set "bg_current" and call "Refresh_current_background()" instead of manually setting "scene bg_class".
+###             bg_current = "Classroom"
+###             call Refresh_current_background()
+
+### Checking correct function for current screen based on time:
+###     Instead of timer hard-coding what to update in "check_events_timer()",
+###         set a variable "timer_update_function_name".
+###         This can be replaced with a different value to update a specific function based on your current screen.
+#               timer_update_function_name = "check_events"
+default timer_update_function_name = "check_events"

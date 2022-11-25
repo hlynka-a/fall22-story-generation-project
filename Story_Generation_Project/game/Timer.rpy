@@ -10,17 +10,34 @@ label display_timer:
     $ Minutes = 0
     $ Hours = 0
 
-    scene bg_class
+    #scene bg_class
+    $ bg_current = "Classroom"
+    $ timer_update_function_name = "check_events"
+    call Refresh_current_background()
     show screen timer_logic()
     show screen timer_screen()
+    show screen debug_time_menu_screen()
     call screen background_screen()
+    #show screen background_screen()
 
     return
+
+label overlay_timer:
+    show screen timer_logic()
+    show screen timer_screen()
+
+label overlay_timer_debug:
+    # $ time_to_exit = False
+    $ Minutes = 0
+    $ Hours = 0
+    show screen debug_time_menu_screen()
+    #show screen background_screen()
+
 
 screen timer_logic:
     zorder 100
     #timer .1 repeat True action [Call("update_time")]
-    timer 0.5 repeat True action [Call("update_time")]
+    timer .5 repeat True action [Call("update_time")]
 
 screen timer_screen:
     zorder 100
@@ -34,6 +51,7 @@ label exit_timer_screen:
     $ time_to_exit = True
     hide screen timer_logic
     hide screen timer_screen
+    hide screen debug_time_menu_screen
 
     jump start
     return
@@ -44,10 +62,12 @@ label check_events_timer:
     #    $ renpy.notify("Hi!");
     #if (Hours == 13 and Minutes >= 35 and Minutes <= 40):
     #    $ renpy.notify("Hello!");
-    call check_events
+    #call check_events
+    $ renpy.call(timer_update_function_name)
     return
 
 label update_time:
+    #$ renpy.notify("time_to_exit = " + str(time_to_exit))
     if (time_to_exit == True):
         return
 
@@ -60,9 +80,12 @@ label update_time:
 
 
 label refresh_current_screen:
-    scene bg_class
+    #scene bg_class
+    #scene bg_current
+    call Refresh_current_background()
     show screen timer_logic()
     show screen timer_screen()
+    show screen debug_time_menu_screen()
     #call screen background_screen()
     #call screen renpy.current_screen().screen_name[0]
     $ renpy.call_screen("%s"%(current_screen_name))
@@ -92,14 +115,15 @@ label go_to_different_screen(name_of_new_screen):
     call refresh_current_screen()
 
 
+#screen background_screen:
 screen background_screen:
-
     textbutton "{size=28}{color=#FFF}Exit Test{/color}{/size}":
         background "#000"
         xpos 1000
         ypos 200
         action [Jump("exit_timer_screen")]
 
+screen debug_time_menu_screen:
     textbutton "{size=28}{color=#FFF}Pause Real Time{/color}{/size}":
         background "#000"
         xpos 1000

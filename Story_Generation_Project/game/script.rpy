@@ -10,6 +10,7 @@ image bg_lib = im.Scale("bg Library.jpg", 1920, 1080)
 image bg_clock = im.Scale("bg Clock.jpg", 1920, 1080)
 image bg_class = im.Scale("bg Classroom.jpg", 1920, 1080)
 image bg_residence = im.Scale("bg Residence.jpg", 1920, 1080)
+default bg_current = "Classroom"
 image cr_idle = im.Scale("classroom idle.jpg", 100, 100)
 image cr_hover = im.Scale("classroom hovered.jpg", 100, 100)
 image lb_idle = im.Scale("library idle.jpg", 100, 100)
@@ -91,3 +92,13 @@ label Player_settings:
         "Back":
             jump start
     return
+
+label Refresh_current_background():
+    if (bg_current == "Classroom"):
+        scene bg_class
+    elif (bg_current == "Library"):
+        scene bg_lib
+    elif (bg_current == "Uni"):
+        scene bg_Uni
+    elif (bg_current == "Residence"):
+        scene bg_residence

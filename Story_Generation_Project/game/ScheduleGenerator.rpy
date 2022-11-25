@@ -17,6 +17,7 @@ init python:
                 return True
             else:
                 return False
+
         def eventinactive(self, e_d, e_he, e_me):
             if self.event_day == e_d and self.event_hends == e_he and self.event_mends == e_me:
                 self.event_active == False;
@@ -62,6 +63,7 @@ label schedule_generator:
     scene bg_class
     show screen timer_logic()
     show screen timer_screen()
+    show screen debug_time_menu_screen()
     call screen background_screen()
 
     return
