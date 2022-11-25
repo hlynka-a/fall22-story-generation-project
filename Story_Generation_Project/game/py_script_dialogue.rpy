@@ -103,10 +103,18 @@ init python:
     temp_current_location="Library";
 
     def updateDialogueVariables():
+        global temp_player_study;
+        global temp_player_social;
+        global temp_player_health;
+
         global temp_current_day;
         global temp_current_hour;
         global temp_current_minute;
         global temp_current_location;
+
+        temp_player_study = Player_study;
+        temp_player_social = Player_social;
+        temp_player_health = Player_health;
 
         temp_current_day = Days;
         temp_current_hour = Hours;
