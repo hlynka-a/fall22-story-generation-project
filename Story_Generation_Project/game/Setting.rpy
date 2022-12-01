@@ -8,11 +8,41 @@ label start_setting:
             jump Settings
         "No":
             jump No_Settings
- 
+
     return
 
 
 label No_Settings:
+    if (player_flag == False):
+        e "If you choose NO, then we'll quit the game. Seems like a waste... I'll ask one more time."
+        e "WOULD YOU LIKE TO BEGIN A NEW WAY OF LIFE IN ORDER TO GAIN NEW EXPERIENCES?"
+        menu:
+            "Yes":
+                jump Settings
+            "No":
+                jump No_Again_Settings
+    else:
+        jump start
+    return
+
+label No_Priority:
+    if (player_flag == False):
+        e "I told you, if you keep saying NO, we'll just quit the game. I'll ask one more time."
+        e "WOULD YOU LIKE TO SET THE PRIORITIES OF YOU SCHOOL LIFE?"
+        menu:
+            "Yes":
+                if player_flag == True:
+                    hide screen player_statement_bars
+                jump Yes_Priority
+            "No":
+                jump No_Again_Settings
+    else:
+        # if flag is false, then settings have already been set, we can continue to the main adventure.
+        #jump start
+        jump player_begin_game
+    return
+
+label No_Again_Settings:
     if (player_flag == False):
         e "If this is what you want, then, bye."
         $ renpy.quit();
@@ -42,24 +72,28 @@ label Set_priority:
                 hide screen player_statement_bars
             jump Yes_Priority
         "No":
-            jump No_Settings
+            jump No_Priority
     return
 
 label Yes_Priority:
     $ rank = ["highest","second","lowest"]
     $ i = 0
 
+    $ priorities_chosen = [False, False, False];
     while i < len(rank):
-        $ Q = "which one is your " + rank[i] + " priorities? "
+        $ Q = "Which one is your " + rank[i] + " priorities? "
         e "[Q]"
         menu:
-            "Health":
+            "Health" if priorities_chosen[0] == False:
+                $ priorities_chosen[0] = True
                 $ player_priorities[i] = "Health"
                 $ player_health_local -= i*3
-            "Study":
+            "Study" if priorities_chosen[1] == False:
+                $ priorities_chosen[1] = True
                 $ player_priorities[i] = "Study"
                 $ player_study_local -= i*3
-            "Social":
+            "Social" if priorities_chosen[2] == False:
+                $ priorities_chosen[2] = True
                 $ player_priorities[i] = "Social"
                 $ player_social_local -= i*3
         $ i += 1
@@ -81,6 +115,7 @@ label statement_display:
 
     show screen player_statement_bars
     e "No worries. It is just a beginning, [player_name].\nJust try not to stay the same."
+    hide screen player_statement_bars
 
     jump Set_priority
     return
@@ -105,3 +140,12 @@ screen player_statement_bars:
             text 'Health: [health]' align(0,80)
 return
 
+label player_begin_game:
+    e "You have everything you need. Now we can begin."
+    e "Remember to track your time wisely, and keep watch on your Study, Social and Health points to ensure you do your best."
+    e "Your adventure at school begins now! Good luck!"
+
+    e "Hope you are ready for a new beginning."
+    jump imagemap_uni
+
+    return

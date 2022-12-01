@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/NPC_schedule_v2.rpy", line 111: 'return' is not a keyword argument or valid child for the screen statement.
+File "game/Setting.rpy", line 139: 'return' is not a keyword argument or valid child for the screen statement.
     return
           ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Fri Nov 25 00:07:56 2022
+Thu Dec  1 12:39:39 2022
