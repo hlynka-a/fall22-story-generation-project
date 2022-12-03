@@ -1,72 +1,14 @@
-﻿# The script of the game goes in this file.
+﻿
+#show bg_class with fade 
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
+# This is the group project of COMP 5900 Game theroy
+# contribute by Andrew, Jay , Yanan
 
-define e = Character("Eileen")
-
-image bg_Uni = im.Scale("bg CarletonU.jpg", 1920, 1080)
-image bg_lib = im.Scale("bg Library.jpg", 1920, 1080)
-image bg_clock = im.Scale("bg Clock.jpg", 1920, 1080)
-image bg_class = im.Scale("bg Classroom.jpg", 1920, 1080)
-image bg_residence = im.Scale("bg Residence.jpg", 1920, 1080)
-image cr_idle = im.Scale("classroom idle.jpg", 100, 100)
-image cr_hover = im.Scale("classroom hovered.jpg", 100, 100)
-image lb_idle = im.Scale("library idle.jpg", 100, 100)
-image lb_hover = im.Scale("library hovered.jpg", 100, 100)
-image pk_idle = im.Scale("park idle.jpg", 100, 100)
-image pk_hover = im.Scale("park hovered.jpg", 100, 100)
-image at_idle = im.Scale("advance time idle.jpg", 300, 100)
-image at_hover = im.Scale("advance time hovered.jpg", 300, 100)
-
-default player_study_local = 10
-default player_social_local = 10
-default player_health_local = 100
-default player_name = "Anonymous"
-default player_priorities = ["Study","Health","Social"]
-default player_flag = False
-
-default NPC_study_local = 10
-default NPC_social_local = 10
-default NPC_health_local = 100
-
-default Minutes = 0
-default Hours = 8
-default Parts = 0
-default Days = 0
-default WeekDays = ["Mon","Tue","Wed","Thu","Fri"]
-default Chunks = ["Morning","Afternoon","Evening","Night"]
-
-
-default no_event = True
-default real_time = True
-default time_to_exit = False
-default current_screen_name = "background_screen"
-
+# the start function will show the chapters of the game
 label start:
-    scene bg_Uni
-    menu:
-        "Player Setting":
-            jump Player_settings
-        "School Life":
-            e "Hope you are ready for a new beginning."
-            jump imagemap_uni
-        "Generate NPC":
-            jump NPC_schedule
-        "Timer ":
-            jump dispaly_timer
-        "Generate Schedule":
-            jump schedule_generator
-        "Quit":
-            $ renpy.quit();       
-        
-          
-    return
 
-label Player_settings:
-    menu:
-        "Setting":
-            jump start_setting
-        "Skip Setting":
-            jump statement_display
+    call statement_display
+    e "The next step is going to the image map of University. You ganna choose where you wanna go."
+    call uni_map
+
     return

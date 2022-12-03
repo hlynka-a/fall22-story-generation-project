@@ -1,13 +1,13 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/StandardEventsGenerator.rpy", line 8, in script
+  File "game/player.rpy", line 76, in script
     init python:
-  File "game/StandardEventsGenerator.rpy", line 8, in script
+  File "game/player.rpy", line 76, in script
     init python:
-  File "game/StandardEventsGenerator.rpy", line 10, in <module>
-    events_library = {event_name:event_time}
-NameError: name 'event_name' is not defined
+  File "game/player.rpy", line 77, in <module>
+    study = min(player_study_local,100)
+NameError: name 'player_study_local' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -16,20 +16,20 @@ Full traceback:
     renpy.main.main()
   File "D:\RenPy\renpy-8.0.3-sdk\renpy\main.py", line 558, in main
     renpy.game.context().run(node)
-  File "game/StandardEventsGenerator.rpy", line 8, in script
+  File "game/player.rpy", line 76, in script
     init python:
   File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/site-packages/future/utils/__init__.py", line 441, in raise_
-  File "game/StandardEventsGenerator.rpy", line 8, in script
+  File "game/player.rpy", line 76, in script
     init python:
   File "D:\RenPy\renpy-8.0.3-sdk\renpy\ast.py", line 1131, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "D:\RenPy\renpy-8.0.3-sdk\renpy\python.py", line 1061, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/StandardEventsGenerator.rpy", line 10, in <module>
-    events_library = {event_name:event_time}
-NameError: name 'event_name' is not defined
+  File "game/player.rpy", line 77, in <module>
+    study = min(player_study_local,100)
+NameError: name 'player_study_local' is not defined
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 8.0.3.22090809
-Story_Generation_Project 1.0
-Sat Nov 19 22:08:32 2022
+Final_Project 1.0
+Sat Dec  3 17:13:49 2022

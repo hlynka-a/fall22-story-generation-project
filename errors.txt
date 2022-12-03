@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/StandardEventsGenerator.rpy", line 13: expected statement.
-    events_library += (event_name,event_time)
-                   ^
+File "game/timer.rpy", line 133: expected statement.
+    player_health_local = 100
+                        ^
+
+File "game/timer.rpy", line 135: expected statement.
+    player_social_local = 100
+                        ^
+
+File "game/timer.rpy", line 137: expected statement.
+    player_study_local = 100
+                       ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Mon Nov 21 18:32:04 2022
+Sat Dec  3 17:09:51 2022
