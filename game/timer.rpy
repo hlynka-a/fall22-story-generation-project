@@ -51,7 +51,7 @@ label update_time:
         $ Minutes = Minutes + 5;
         call current_time
     call check_events
-    if Hours == 13:
+    if Hours == 17:
         call event_recommand_today
     call display_timer
 

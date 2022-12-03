@@ -23,7 +23,7 @@ init python:
 
         def eventinactive(self, e_d, e_he, e_me, e_re):
             if self.event_day == e_d and self.event_hends == e_he and self.event_mends == e_me and self.event_regular == e_re: 
-                self.event_active == False;
+                self.event_active = False;
                 return True
             else:
                 return False
@@ -40,13 +40,13 @@ init python:
 
     Events_library = []
 
-# Course 8:00 - 16:00 
-    Events_library.append(Event("COMP1805", "Mon", 9, 10, 10, 0, False));
-    Events_library.append(Event("COMP3000", "Mon", 12, 0, 13, 0, False));
-    Events_library.append(Event("COMP2401", "Tue", 10, 0, 11, 0, False));
-    Events_library.append(Event("COMP1405", "Wed", 14, 0, 16, 0, False));
-    Events_library.append(Event("COMP2401", "Thu", 10, 0, 11, 0, False));
-    Events_library.append(Event("COMP1405", "Fri", 14, 0, 16, 0, False));
+# Course 9:00 - 16:00 
+    Events_library.append(Event("COMP1805", "Mon", 9, 10, 10, 10, False));
+    Events_library.append(Event("COMP3000", "Mon", 12, 10, 13, 10, False));
+    Events_library.append(Event("COMP2401", "Tue", 10, 10, 11, 10, False));
+    Events_library.append(Event("COMP1405", "Wed", 14, 10, 16, 10, False));
+    Events_library.append(Event("COMP2401", "Thu", 10, 10, 11, 10, False));
+    Events_library.append(Event("COMP1405", "Fri", 14, 10, 16, 10, False));
 
 # Workshop 18:00 - 20:00
 
@@ -139,11 +139,11 @@ label check_events_recommand:
 
 label event_recommand_today:
     if event_recommand == False:
-        call event_recommand
+        call events_recommand
         $  event_recommand = True
     return 
 
-label event_recommand:
+label events_recommand:
     $ player_focus = player_priorities[0]
     call check_events_recommand
     #

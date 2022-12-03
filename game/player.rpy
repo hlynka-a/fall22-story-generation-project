@@ -76,25 +76,22 @@ label statement_display:
 screen player_statement_bars:
 
     if player_study_local > 100:
-        $ study = 100
+        $ player_study_local = 100
     if player_study_local < 0:
-        $ study = 0
-    else: 
-        $ study = player_study_local
+        $ player_study_local = 0 
+    $ study = player_study_local
 
     if player_social_local > 100 :
-        $ social = 100
+        $ player_social_local = 100
     if player_social_local < 0:
-        $ social = 100
-    else: 
-        $ social = player_social_local 
+        $ player_social_local = 100
+    $ social = player_social_local 
 
     if player_health_local > 100:
-        $ health = 100
+        $ player_health_local = 100
     if player_health_local < 0:
-        $ health = 0
-    else: 
-        $ health = player_health_local
+        $ player_health_local = 0
+    $ health = player_health_local
     
     frame:
         xalign 0.99 ypos 20

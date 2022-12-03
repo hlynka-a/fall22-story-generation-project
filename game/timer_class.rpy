@@ -6,7 +6,7 @@ label exit_classroom:
 
 label update_player_statement_classroom:
     $ player_study_local += renpy.random.randint(3,5)
-    $ player_health_local -= renpy.random.randint(15,20)
+    $ player_health_local -= renpy.random.randint(5,8)    
     return
 
 label pause_real_time:
