@@ -146,11 +146,6 @@ label player_begin_game:
     e "Your adventure at school begins now! Good luck!"
 
     e "Hope you are ready for a new beginning."
-    $ defineRandomNPCs(10)
-    $ Days = 0
-    $ Hours = 8
-    $ Minutes = 30
-    call check_NPC_events()
     jump imagemap_uni
 
     return
