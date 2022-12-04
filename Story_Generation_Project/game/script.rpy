@@ -48,7 +48,7 @@ label start:
     scene bg_Uni
     menu:
         "Start Game":
-            $ renpy.notify("(Start Game not complete yet, just go to 'Player_settings')")
+            #$ renpy.notify("(Start Game not complete yet, just go to 'Player_settings')")
             jump Player_settings
         # add option here to "Start Game" in middle of the story, to be able to skip intro and early parts of the game
         "Debug Features Menu":
@@ -60,6 +60,15 @@ label start:
     return
 
 label Debug_features_menu:
+    scene bg_Uni
+    menu:
+        "(Legacy debug features)":
+            jump Old_Debug_features_menu
+        "Back":
+            jump start
+    return
+
+label Old_Debug_features_menu:
     scene bg_Uni
     menu:
         "Player Setting":
@@ -80,14 +89,14 @@ label Debug_features_menu:
         "TRACERY Dialogue Test":
             jump test_dialogue_tracery_screen
         "Back":
-            jump start
+            jump Debug_features_menu
     return
 
 label Player_settings:
     menu:
-        "Setting":
+        "With Player Introduction":
             jump start_setting
-        "Skip Setting":
+        "Skip Player Introduction":
             jump statement_display
         "Back":
             jump start
