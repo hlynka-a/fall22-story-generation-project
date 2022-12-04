@@ -22,7 +22,7 @@ label classroom:
 label library:
     scene bg_lib
     show eileen happy
-   
+
     $ num_of_people = num_of_people_at(1)
     e "In the library, there are currently [num_of_people] here."
     e "What a wonderful experience today. What would you like to do next?"
@@ -36,7 +36,7 @@ label library:
         "Attend the workshop.":
             jump workshop
         "Somewhere else":
-            jump imagemap_done 
+            jump imagemap_done
 return
 
 label self_study:
@@ -68,6 +68,7 @@ label advancetime:
     $ update_time()
     e "The time and day are now [currentDay] and [currentTime]."
     $ player_health_local = 100
+    call check_NPC_events()
     jump imagemap_done
 
 label art:
@@ -86,4 +87,3 @@ label imagemap_done:
     jump imagemap_uni
 
     return
-

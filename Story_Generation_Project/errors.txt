@@ -2,9 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/Setting.rpy", line 139: 'return' is not a keyword argument or valid child for the screen statement.
-    return
-          ^
+File "game/ScheduleGenerator.rpy", line 30: expected an indented block
+            if self.event_day != e_d:
+             ^
+    
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Thu Dec  1 12:39:39 2022
+Sat Dec  3 22:36:10 2022
