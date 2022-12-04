@@ -1,13 +1,12 @@
 label exit_residence:
     hide screen timer_logic
     hide screen timer_screen
-    
-    $ player_study_local -= 2
 
     jump imagemap_done
     return 
 
 label update_player_statement_residence:
+    $ player_study_local -= 1
     $ player_health_local += 10
     return
     

@@ -1,10 +1,11 @@
 label Library:
     scene bg_lib
-    show eileen happy
     $ player_location = "Library"
-    e "We currently in the Library now.\nWhat a wonderful experience today. What would you like to do next?"
+    call Lib_menu
+    return
 
-    show eileen happy at right
+label Lib_menu:
+    call background_screen_library
     menu:
         "Study by myself.":
             jump self_study
@@ -21,6 +22,8 @@ label self_study:
     "Good choice, [player_name]. You just add [randStudy] percent on your study. "
     $ player_study_local += randStudy
     $ player_health_local -= 20
+    $ Minutes += renpy.random.randint(10,20)
+    $ Hours += renpy.random.randint(0,1)
     jump Library
     return
 
@@ -32,14 +35,17 @@ label study_group:
     $ player_social_local += randSocial
     $ player_study_local += randStudy
     $ player_health_local -= 25
+    $ Minutes += renpy.random.randint(10,20)
+    $ Hours += renpy.random.randint(0,1)
     jump Library
     return
 
 # only if the current day has a workshop
 label workshop:
-    
     "The workshop is really helping with the concerns. 5 percent on your study, [player_name]."
     $ player_health_local -= 30
     $ player_study_local += 5
+    $ Minutes += renpy.random.randint(10,20)
+    $ Hours += 1
     jump Library
     return

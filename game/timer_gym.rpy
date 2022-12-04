@@ -5,6 +5,7 @@ label exit_gym:
     return 
 
 label update_player_statement_gym:
+    $ player_study_local -= 4
     $ player_health_local += 10
     return
     

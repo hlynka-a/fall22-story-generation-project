@@ -27,6 +27,13 @@ init python:
                 return True
             else:
                 return False
+
+        #def eventhappennow(self, c_d, c_h, c_m, e_re):
+        #    if self.event_day == c_d and (self.event_hstarts == c_h and self.event_mstatrs <= c_m ) or (self.event_hends == c_h and self.event_mends >= c_m )and self.event_regular == e_re:
+        #        return True
+        #    else:
+        #        return False
+            
         def eventhappenDay(self, e_d):
             if self.event_day == e_d:
                 return True
@@ -41,12 +48,12 @@ init python:
     Events_library = []
 
 # Course 9:00 - 16:00 
-    Events_library.append(Event("COMP1805", "Mon", 9, 10, 10, 10, False));
-    Events_library.append(Event("COMP3000", "Mon", 12, 10, 13, 10, False));
-    Events_library.append(Event("COMP2401", "Tue", 10, 10, 11, 10, False));
-    Events_library.append(Event("COMP1405", "Wed", 14, 10, 16, 10, False));
-    Events_library.append(Event("COMP2401", "Thu", 10, 10, 11, 10, False));
-    Events_library.append(Event("COMP1405", "Fri", 14, 10, 16, 10, False));
+    Events_library.append(Event("COMP1805", "Mon", 9, 00, 10, 00, False));
+    Events_library.append(Event("COMP3000", "Mon", 12, 0, 13, 0, False));
+    Events_library.append(Event("COMP2401", "Tue", 10, 0, 11, 0, False));
+    Events_library.append(Event("COMP1405", "Wed", 14, 0, 16, 0, False));
+    Events_library.append(Event("COMP2401", "Thu", 10, 0, 11, 0, False));
+    Events_library.append(Event("COMP1405", "Fri", 14, 0, 16, 0, False));
 
 # Workshop 18:00 - 20:00
 
@@ -56,8 +63,8 @@ init python:
     Events_library.append(Event("Workshop", "Thu", 18, 0, 20, 0, False,"Study","Library", False));
 
 # Party 18:00 - 20: 00
-    Events_library.append(Event("Party", "Mon", 18, 0, 20, 0, False,"Social","Cafe",False));
-    Events_library.append(Event("Party", "Fri", 18, 0, 20, 0, False,"Social","Cafe", False));
+    Events_library.append(Event("Party", "Mon", 18, 0, 20, 0, False,"Social","Cafeteria",False));
+    Events_library.append(Event("Party", "Fri", 18, 0, 20, 0, False,"Social","Cafeteria", False));
     
 # Run 18:00 - 20:00
     Events_library.append(Event("Corlor Run", "Tue", 18, 0, 20, 0, False,"Health","Park",False)); 
@@ -97,18 +104,14 @@ label reset_irregular_event:
 
 # Create a list of events that occurred on the current day.
 label generate_event_notify:
-    $ i = 0
     $ ee = 0
-    while i < len(WeekDays):
-        $ Events_today[i] = ""
-        while ee < len(Events_library):
-            if WeekDays[i] == Events_library[ee].event_day and Events_library[ee].event_regular == True:
-                $ Events_today[i] += Events_library[ee].event_name
-                $ Events_today[i] += " "
-            $ ee += 1
-        $ Events_today[i] += " will happen today."
-        $ i += 1
-        $ ee = 0
+    $ Events_today = ""
+    while ee < len(Events_library):
+        if WeekDays[Days] == Events_library[ee].event_day and Events_library[ee].event_regular == True:
+            $ Events_today += Events_library[ee].event_name
+            $ Events_today += " "
+        $ ee += 1
+    $ Events_today += " will happen today."
     return
 
 # Call the events list and display the message
@@ -118,7 +121,7 @@ label event_notify_today:
         $ event_randomize = False
     call generate_event_notify
     if event_notify == False:
-            $ output_event_info = Events_today[Days]
+            $ output_event_info = Events_today
             "[output_event_info]"
             $ event_notify = True
     return

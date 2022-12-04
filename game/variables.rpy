@@ -22,6 +22,7 @@ default player_health_local = 100
 #default LocationList = ["Classroom","Library","Park","Coffee Shop","Cafeteria","Shop","Lounge","Residence"]
 default player_location = "Residence"
 default player_focus = "Study"
+default player_participate = False 
 
 
 # Timer
@@ -59,5 +60,5 @@ image ex_hover = im.Scale("exit hovered.jpg", 100, 100)
 default event_notify = False
 default event_recommand = False
 default event_randomize = False
-default Events_today = ["","","","",""]
+default Events_today = ""
 

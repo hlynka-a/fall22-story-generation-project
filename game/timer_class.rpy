@@ -5,29 +5,9 @@ label exit_classroom:
     return
 
 label update_player_statement_classroom:
-    $ player_study_local += renpy.random.randint(3,5)
-    $ player_health_local -= renpy.random.randint(5,8)    
-    return
-
-label pause_real_time:
-    $ real_time = False
-    call display_timer
-    return
-
-label resume_real_time:
-    $ real_time = True
-    call display_timer
-    return
-
-label decrease_time(time_to_remove):
-    $ Hours = Hours - time_to_remove
-    call current_time()
-    call display_timer
-    return
-
-label go_to_different_screen(name_of_new_screen):
-    $ current_screen_name = name_of_new_screen
-    call display_timer
+    if player_participate == True:
+        $ player_study_local += renpy.random.randint(3,5)
+        $ player_health_local -= renpy.random.randint(5,8)
     return
 
 screen background_screen_class:
@@ -60,3 +40,25 @@ screen background_screen_class:
         xpos 0.7
         ypos 0.7
         action [Call("decrease_time", 1)]
+    
+
+label pause_real_time:
+    $ real_time = False
+    call display_timer
+    return
+
+label resume_real_time:
+    $ real_time = True
+    call display_timer
+    return
+
+label decrease_time(time_to_remove):
+    $ Hours = Hours - time_to_remove
+    call current_time()
+    call display_timer
+    return
+
+label go_to_different_screen(name_of_new_screen):
+    $ current_screen_name = name_of_new_screen
+    call display_timer
+    return

@@ -68,9 +68,9 @@ label current_time:
 
     if Hours > 23:
         $ Hours = 0
-        $ Days += 1
         call reset_labels
-    if Days > 6:
+        $ Days += 1
+    if Days >= 5:
         $ Days = 0
     # if Player is increasing / decreasing time, be able to handle it below:
     if Minutes < 0:
@@ -98,18 +98,27 @@ label check_events:
         if Events_library[ee].eventcheck(WeekDays[Days],Hours,Minutes,True):
             $ output_event_info = Events_library[ee].event_name
             $ output_event_info += " happens now."
+            if player_location == Events_library[ee].event_location:
+                $ player_participate = True
             $ renpy.notify(output_event_info)
         if Events_library[ee].eventinactive(WeekDays[Days],Hours,Minutes,True):
             $ output_event_info = Events_library[ee].event_name
             $ output_event_info += " ends now."
+            $ player_participate = False
             #"[output_event_info]"
             $ renpy.notify(output_event_info)
+        #if  Events_library[ee].eventhappennow(WeekDays[Days],Hours,Minutes,True):
+        #    if player_location == Events_library[ee].event_location:
+        #        $ player_participate = True
+        #    else:
+        #        $ player_participate = False
         $ ee += 1
     return
 
 label reset_labels:
     $ event_notify = False
     $ event_recommand = False
+    $ player_participate = False
     call reset_irregular_event
     if renpy.random.randint(1,3) == 1:
         $ event_randomize = True

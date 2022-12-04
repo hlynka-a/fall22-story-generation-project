@@ -5,7 +5,10 @@ label exit_park:
     return 
 
 label update_player_statement_park:
-    $ player_health_local += 5
+    if player_participate == True:
+        $ player_health_local += renpy.random.randint(20,25)
+    else:
+        $ player_health_local += renpy.random.randint(3,5)
     return
     
 screen background_screen_park:

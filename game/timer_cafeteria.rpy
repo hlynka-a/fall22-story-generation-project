@@ -5,9 +5,11 @@ label exit_cafe:
     return 
 
 label update_player_statement_cafe:
-    $ player_health_local += 5
-    $ player_social_local += 2
-    
+    if player_participate == True:
+        $ player_health_local += renpy.random.randint(8,10)
+        $ player_social_local += renpy.random.randint(5,8)
+    else:
+        $ player_health_local += renpy.random.randint(1,5)
     return
     
 screen background_screen_cafe:
