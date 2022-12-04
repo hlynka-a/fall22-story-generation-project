@@ -12,15 +12,22 @@ init python:
             self.event_active = event_active;
 
         def eventcheck(self, e_d, e_hs, e_ms):
-            if self.event_day == e_d and self.event_hstarts == e_hs and self.event_mstatrs == e_ms:
+            temp_tstart = (self.event_hstarts * 100) + self.event_mstatrs;
+            temp_tend = (self.event_hends * 100) + self.event_mends;
+            temp_currenttime = (e_hs * 100) + e_ms;
+            if self.event_day == e_d and temp_tstart <= temp_currenttime and temp_tend >= temp_currenttime and self.event_active == False:
                 self.event_active = True;
                 return True
             else:
                 return False
 
         def eventinactive(self, e_d, e_he, e_me):
-            if self.event_day == e_d and self.event_hends == e_he and self.event_mends == e_me:
-                self.event_active == False;
+            temp_tstart = (self.event_hstarts * 100) + self.event_mstatrs;
+            temp_tend = (self.event_hends * 100) + self.event_mends;
+            temp_currenttime = (e_he * 100) + e_me;
+
+            if (self.event_day != e_d or (temp_tstart > temp_currenttime or temp_tend < temp_currenttime)) and self.event_active == True:
+                self.event_active = False;
                 return True
             else:
                 return False
