@@ -9,9 +9,6 @@ label start:
 
     call statement_display
     e "The next step is going to the image map of University. You ganna choose where you wanna go."
-    
-    $ i = len(WeekDays)
-    e "[i]"
     call uni_map
 
     return
