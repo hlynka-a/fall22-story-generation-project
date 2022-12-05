@@ -71,18 +71,42 @@ init python:
     def update_time():
         renpy.notify("update_time() was called.");
 
+        #global currentTime;
+        #global currentTimeIndex;
+        #global currentDayIndex;
+        #global currentDay;
+        #currentTimeIndex = currentTimeIndex + 1;
+        #if (currentTimeIndex >= numOfStudents):
+        #    currentTimeIndex = 0;
+        #    currentDayIndex = currentDayIndex + 1;
+        #    if (currentDayIndex >= 5):
+        #        currentDayIndex = 0;
+        #currentTime = timeOfDay[currentTimeIndex];
+        #currentDay = day[currentDayIndex];
+
+        global Days;
+        global Hours;
+        global Minutes;
         global currentTime;
-        global currentTimeIndex;
-        global currentDayIndex;
         global currentDay;
-        currentTimeIndex = currentTimeIndex + 1;
-        if (currentTimeIndex >= numOfStudents):
-            currentTimeIndex = 0;
-            currentDayIndex = currentDayIndex + 1;
-            if (currentDayIndex >= 5):
-                currentDayIndex = 0;
-        currentTime = timeOfDay[currentTimeIndex];
-        currentDay = day[currentDayIndex];
+        global Parts
+        Hours = Hours + 6;
+        if (Hours >= 24):
+            Hours = Hours - 24;
+            Days = Days + 1;
+        if (Hours >= 24 or Hours < 6):
+            currentTime = Chunks[3];
+            Parts = 3
+        elif (Hours >= 6 and Hours < 12):
+            currentTime = Chunks[0];
+            Parts = 0
+        elif (Hours >= 12 and Hours < 18):
+            currentTime = Chunks[1];
+            Parts = 1
+        elif (Hours >= 18 and Hours < 24):
+            currentTime = Chunks[2];
+            Parts = 2
+        currentDay = Days;
 
     def num_of_people_at(locationIndex):
         totalPeople = 0;

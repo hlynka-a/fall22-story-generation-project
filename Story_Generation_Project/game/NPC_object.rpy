@@ -47,7 +47,7 @@ init python:
                 randomSchedule.append(Event("Park","Mon",12,0,14,0,False));
                 randomSchedule.append(Event("Cafe","Mon",14,0,17,0,False));
             elif (randInt % 3 == 2):
-                randomSchedule.append(Event("Cafe", "Mon", 7, 0, 9, 0, False));
+                randomSchedule.append(Event("Park", "Mon", 7, 0, 9, 0, False));
                 randomSchedule.append(Event("Library","Mon", 9,0,11,0,False));
                 randomSchedule.append(Event("Classroom","Mon",11,0,13,0,False));
                 randomSchedule.append(Event("Park","Mon",13,0,17,0,False));
