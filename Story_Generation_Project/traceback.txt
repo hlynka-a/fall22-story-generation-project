@@ -1,238 +1,66 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/uni_rest.rpy", line 16, in script call
-    call display_timer
-  File "game/Timer.rpy", line 37, in script call
-    call screen background_screen_park()
-  File "game/Timer.rpy", line 107, in script call
-    call check_events
-  File "game/Timer.rpy", line 227, in script call
-    call event_notify_today
-  File "game/eventsgenerator.rpy", line 146, in script call
-    "[output_event_info]"
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 129, in script
-    $ updateDialogueVariables()
-  File "game/NPC_schedule_v2.rpy", line 129, in <module>
-    $ updateDialogueVariables()
-  File "game/py_script_dialogue.rpy", line 115, in updateDialogueVariables
-    temp_player_study = Player_study;
-NameError: name 'Player_study' is not defined
+  File "game/Special_Event.rpy", line 4, in script
+    call screen test_special_event_screen
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/Special_Event.rpy", line 32, in execute
+    screen test_special_event_screen():
+  File "game/Special_Event.rpy", line 32, in execute
+    screen test_special_event_screen():
+  File "game/Special_Event.rpy", line 131, in execute
+    $ this_temp_day = Day
+  File "game/Special_Event.rpy", line 131, in <module>
+    $ this_temp_day = Day
+NameError: name 'Day' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/uni_rest.rpy", line 16, in script call
-    call display_timer
-  File "game/Timer.rpy", line 37, in script call
-    call screen background_screen_park()
-  File "game/Timer.rpy", line 107, in script call
-    call check_events
-  File "game/Timer.rpy", line 227, in script call
-    call event_notify_today
-  File "game/eventsgenerator.rpy", line 146, in script call
-    "[output_event_info]"
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 50, in script call
-    call screen NPC_image_v2()
-  File "game/Timer.rpy", line 108, in script call
-    call NPC_schedule_v2_event_update
-  File "game/NPC_schedule_v2.rpy", line 150, in script call
-    call create_NPC_image_v2()
-  File "game/NPC_schedule_v2.rpy", line 129, in script
-    $ updateDialogueVariables()
-  File "C:\Users\hlynk\OneDrive\Desktop\UNIVERSITY\PhD_Calreton\Classes\F22_COMP_5900_J_game_dev_technologies\renpy-8.0.3-sdk.7z\renpy-8.0.3-sdk\renpy\ast.py", line 1131, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\hlynk\OneDrive\Desktop\UNIVERSITY\PhD_Calreton\Classes\F22_COMP_5900_J_game_dev_technologies\renpy-8.0.3-sdk.7z\renpy-8.0.3-sdk\renpy\python.py", line 1061, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/NPC_schedule_v2.rpy", line 129, in <module>
-    $ updateDialogueVariables()
-  File "game/py_script_dialogue.rpy", line 115, in updateDialogueVariables
-    temp_player_study = Player_study;
-NameError: name 'Player_study' is not defined
+  File "game/Special_Event.rpy", line 4, in script
+    call screen test_special_event_screen
+  File "C:\Users\hlynk\OneDrive\Desktop\UNIVERSITY\PhD_Calreton\Classes\F22_COMP_5900_J_game_dev_technologies\renpy-8.0.3-sdk.7z\renpy-8.0.3-sdk\renpy\ast.py", line 2232, in execute
+    self.call("execute")
+  File "C:\Users\hlynk\OneDrive\Desktop\UNIVERSITY\PhD_Calreton\Classes\F22_COMP_5900_J_game_dev_technologies\renpy-8.0.3-sdk.7z\renpy-8.0.3-sdk\renpy\ast.py", line 2220, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\hlynk\OneDrive\Desktop\UNIVERSITY\PhD_Calreton\Classes\F22_COMP_5900_J_game_dev_technologies\renpy-8.0.3-sdk.7z\renpy-8.0.3-sdk\renpy\statements.py", line 281, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\Users\hlynk\OneDrive\Desktop\UNIVERSITY\PhD_Calreton\Classes\F22_COMP_5900_J_game_dev_technologies\renpy-8.0.3-sdk.7z\renpy-8.0.3-sdk\renpy\exports.py", line 3181, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "C:\Users\hlynk\OneDrive\Desktop\UNIVERSITY\PhD_Calreton\Classes\F22_COMP_5900_J_game_dev_technologies\renpy-8.0.3-sdk.7z\renpy-8.0.3-sdk\renpy\ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\hlynk\OneDrive\Desktop\UNIVERSITY\PhD_Calreton\Classes\F22_COMP_5900_J_game_dev_technologies\renpy-8.0.3-sdk.7z\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\hlynk\OneDrive\Desktop\UNIVERSITY\PhD_Calreton\Classes\F22_COMP_5900_J_game_dev_technologies\renpy-8.0.3-sdk.7z\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\hlynk\OneDrive\Desktop\UNIVERSITY\PhD_Calreton\Classes\F22_COMP_5900_J_game_dev_technologies\renpy-8.0.3-sdk.7z\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\hlynk\OneDrive\Desktop\UNIVERSITY\PhD_Calreton\Classes\F22_COMP_5900_J_game_dev_technologies\renpy-8.0.3-sdk.7z\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\hlynk\OneDrive\Desktop\UNIVERSITY\PhD_Calreton\Classes\F22_COMP_5900_J_game_dev_technologies\renpy-8.0.3-sdk.7z\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\hlynk\OneDrive\Desktop\UNIVERSITY\PhD_Calreton\Classes\F22_COMP_5900_J_game_dev_technologies\renpy-8.0.3-sdk.7z\renpy-8.0.3-sdk\renpy\display\screen.py", line 451, in visit_all
+    callback(self)
+  File "C:\Users\hlynk\OneDrive\Desktop\UNIVERSITY\PhD_Calreton\Classes\F22_COMP_5900_J_game_dev_technologies\renpy-8.0.3-sdk.7z\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\hlynk\OneDrive\Desktop\UNIVERSITY\PhD_Calreton\Classes\F22_COMP_5900_J_game_dev_technologies\renpy-8.0.3-sdk.7z\renpy-8.0.3-sdk\renpy\display\screen.py", line 462, in per_interact
+    self.update()
+  File "C:\Users\hlynk\OneDrive\Desktop\UNIVERSITY\PhD_Calreton\Classes\F22_COMP_5900_J_game_dev_technologies\renpy-8.0.3-sdk.7z\renpy-8.0.3-sdk\renpy\display\screen.py", line 653, in update
+    self.screen.function(**self.scope)
+  File "game/Special_Event.rpy", line 32, in execute
+    screen test_special_event_screen():
+  File "game/Special_Event.rpy", line 32, in execute
+    screen test_special_event_screen():
+  File "game/Special_Event.rpy", line 131, in execute
+    $ this_temp_day = Day
+  File "game/Special_Event.rpy", line 131, in <module>
+    $ this_temp_day = Day
+NameError: name 'Day' is not defined
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.0.3.22090809
 Story_Generation_Project 1.1204
-Mon Dec  5 04:30:45 2022
+Mon Dec  5 15:01:41 2022

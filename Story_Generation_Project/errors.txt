@@ -2,11 +2,7 @@
 errors listed below, and try again.
 
 
-The label check_events is defined twice, at File "game/ScheduleGenerator.rpy", line 80:
-label check_events:
-and File "game/Timer.rpy", line 216:
-label check_events:
-
+File "game/Special_Event.rpy", line 195: Indentation mismatch.
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Mon Dec  5 03:19:25 2022
+Mon Dec  5 15:01:00 2022

@@ -89,6 +89,8 @@ label Old_Debug_features_menu:
             jump test_dialogue_screen
         "TRACERY Dialogue Test":
             jump test_dialogue_tracery_screen
+        "Special Events Checker":
+            jump test_spec_evt
         "Back":
             jump Debug_features_menu
     return
