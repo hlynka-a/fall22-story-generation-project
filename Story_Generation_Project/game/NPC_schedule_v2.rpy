@@ -59,23 +59,26 @@ screen NPC_background_screen:
         action [Jump("exit_timer_screen")]
 
 screen NPC_image_v2():
-    textbutton "{size=28}{color=#FFF}Exit Test{/color}{/size}":
-        background "#000"
-        xpos 1000
-        ypos 200
-        action [Jump("exit_timer_screen")]
+    zorder 101
+    #textbutton "{size=28}{color=#FFF}Exit Test{/color}{/size}":
+    #    background "#000"
+    #    xpos 1000
+    #    ypos 200
+    #    action [Jump("exit_timer_screen")]
+    #$ renpy.notify("NPC_image_v2 called");
 
-    $ numOfNPCsAtLocation = len(listOfNPCsAtLocation)
-    for i in range(0,numOfNPCsAtLocation):
-        imagebutton:
-            xpos 0.8 + (0.1*(int(i/4)))
-            ypos 0.1 + (0.2*(i%4))
-            idle "logo base"
-            hover "logo bw"
-            hovered [SetVariable("NPCsAtLocationIndex",i),Show("NPC_statements_bars_v2")]
-            unhovered Hide("NPC_statements_bars_v2")
+    if (npcTalkingNow == False):
+        $ numOfNPCsAtLocation = len(listOfNPCsAtLocation)
+        for i in range(0,numOfNPCsAtLocation):
+            imagebutton:
+                xpos 0.8 + (0.1*(int(i/4)))
+                ypos 0.1 + (0.2*(i%4))
+                idle "logo base"
+                hover "logo bw"
+                hovered [SetVariable("NPCsAtLocationIndex",i),Show("NPC_statements_bars_v2")]
+                unhovered Hide("NPC_statements_bars_v2")
 
-            action [Hide("NPC_statements_bars_v2"),Jump("talk_to_NPC_v2")]
+                action [Hide("NPC_statements_bars_v2"),Jump("talk_to_NPC_v2")]
 
 screen NPC_statements_bars_v2():
 
@@ -118,6 +121,7 @@ label talk_to_NPC_v2:
     $ real_time_temp = real_time
     $ real_time = False
     $ time_to_exit = True
+    $ npcTalkingNow = True
     hide screen timer_logic
     hide screen timer_screen
     hide screen debug_time_menu_screen
@@ -134,15 +138,21 @@ label talk_to_NPC_v2:
 
     $ real_time = real_time_temp
     $ time_to_exit = False
-    show screen timer_logic
-    show screen timer_screen
-    show screen debug_time_menu_screen
-    jump loop_NPC_schedule_v2
+    $ npcTalkingNow = False
+    #show screen timer_logic
+    #show screen timer_screen
+    #show screen debug_time_menu_screen
+    #jump loop_NPC_schedule_v2
+    hide logo base with dissolve
+    jump display_timer
 
     return
 
 label NPC_schedule_v2_event_update:
     call check_NPC_events()
-    $ listOfNPCsAtLocation = get_NPCs_at_location(Location)
+    #$ listOfNPCsAtLocation = get_NPCs_at_location(Location)
+    $ listOfNPCsAtLocation = get_NPCs_at_location(player_location)
     #call create_NPC_image_v2(len(listOfNPCs))
-    call create_NPC_image_v2()
+    #call create_NPC_image_v2()
+    show screen NPC_image_v2()
+    call display_timer

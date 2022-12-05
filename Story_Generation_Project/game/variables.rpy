@@ -1,78 +1,64 @@
 
-### Time:
-###     Days = [0 - 5]
-###     Hours = [0 - 23]
-###     Minutes = [0 - 59]
-###     WeekDays = ["Mon" - "Fri"]      # list of possible week days
-###     Chunks = ["Morning" - "Night"]  # discrete periods of the day, calculated based on current Hours and Minutes
-default Days = 0
-default Hours = 0
+# Welcome
+define e = Character("Eileen")
+
+image bg_Uni = im.Scale("bg CarletonU.jpg", 1920, 1080)
+image bg_lib = im.Scale("bg Library.jpg", 1920, 1080)
+image bg_class = im.Scale("bg Classroom.jpg", 1920, 1080)
+image bg_residence = im.Scale("bg Residence.jpg", 1920, 1080)
+image bg_park = im.Scale("bg Park.jpg",1920,1080)
+image bg_cafeteria = im.Scale("bg lounge.jpg",1920,1080)
+image bg_gym = im.Scale("bg Gym.jpg",1920,1080)
+
+# Player
+default player_flag = False
+default player_name = "Anonymous"
+default player_priorities = ["Study","Health","Social"]
+
+default player_study_local = 10
+default player_social_local = 10
+default player_health_local = 100
+
+#default LocationList = ["Classroom","Library","Park","Coffee Shop","Cafeteria","Shop","Lounge","Residence"]
+default player_location = "Residence"
+default player_focus = "Study"
+default player_participate = False 
+
+
+# Timer
 default Minutes = 0
-default WeekDays = ["Mon","Tue","Wed","Thu","Fri"]
+default Hours = 8
+default Parts = 0
+default Days = 0
 default Chunks = ["Morning","Afternoon","Evening","Night"]
+default WeekDays = ["Mon","Tue","Wed","Thu","Fri"]
+default Calender = 0
 
-### Normal Events:
-###     Access schedule of Player events from:
-###         Events_library = []                 # a Python data object with sub-objects (listed below)
-###             Events_library[0].event_name = "somestring"
-###             Events_library[0].event_day = [0 - 5]
-###             Events_library[0].event_hstarts = [0 - 23]
-###             Events_library[0].event_mstarts = [0 - 59]
-###             Events_library[0].event_hends = [0 - 23]
-###             Events_library[0].event_mends = [0 - 59]
-###             Events_library[0].event_active = [True or False]
+default time_to_exit = False
+default no_event = True
+default real_time = True
 
+default current_screen_name = "background_screen"
 
-### Normal Dialogue with NPC:
-###     Call '$ initializeDialogue()' once at beginning of the game (for non-Tracery dialogue).
-###     BEFORE calling to get a line of dialogue, first update the following variables:
-###             temp_player_study=50;
-###             temp_player_social=50;
-###             temp_player_health=50;
-###             temp_this_study=50;
-###             temp_this_social=50;
-###             temp_this_health=50;
-###             temp_current_day=0;
-###             temp_current_hour=0;
-###             temp_current_minute=0;
-###             temp_current_location="Library";
-###         OR do this automatically by calling '$ updateDialogueVariables()'
-###     Call '$ dialogue = getDialogue()' to get 1 line of (non-Tracery) dialogue.
-###     Call '$ dialogue = getTraceryDialogue()' to get 1 line of (Tracery) dialogue.
+# Uni_map
+image cr_idle = im.Scale("classroom idle.jpg", 100, 100)
+image cr_hover = im.Scale("classroom hovered.jpg", 100, 100)
+image lb_idle = im.Scale("library idle.jpg", 100, 100)
+image lb_hover = im.Scale("library hovered.jpg", 100, 100)
+image pk_idle = im.Scale("park idle.jpg", 100, 100)
+image pk_hover = im.Scale("park hovered.jpg", 100, 100)
+image cf_idle = im.Scale("cafeteria idle.jpg", 100, 100)
+image cf_hover = im.Scale("cafeteria hovered.jpg", 100, 100)
+image gy_idle = im.Scale("gym idle.jpg", 100, 100)
+image gy_hover = im.Scale("gym hovered.jpg", 100, 100)
+image re_idle = im.Scale("residence idle.jpg", 100, 100)
+image re_hover = im.Scale("residence hovered.jpg", 100, 100)
+image ex_idle = im.Scale("exit idle.jpg", 100, 100)
+image ex_hover = im.Scale("exit hovered.jpg", 100, 100)
 
-### Location:
-###     Location = "Classroom"      (a string, can be ["Classroom", "Library", "Park", "Coffee Shop", "Cafeteria", "Shop", "Lounge", "Residence"], more can be added.)
-default Location = "Classroom"
-default LocationList = ["Classroom","Library","Park","Coffee Shop","Cafeteria","Shop","Lounge","Residence"]
+# EventsGenerator 
+default event_notify = False
+default event_recommand = False
+default event_randomize = False
+default Events_today = ""
 
-### Player Stats:
-###     Player_study = [0 - 100]
-###     Player_social = [0 - 100]
-###     Player_health = [0 - 100]
-default Player_study = 50
-default Player_social = 50
-default Player_health = 50
-
-### NPC Stats:
-###     Access NPC elements from:
-###         NPC_list = []                               # a Python data object with sub-objects (listed below)
-###             NPC_list[0].npc_firstname = "somestring"
-###             NPC_list[0].npc_lastname = "somestring"
-###             NPC_list[0].npc_study = [0 - 100]
-###             NPC_list[0].npc_social = [0 - 100]
-###             NPC_list[0].npc_health = [0 - 100]
-###             NPC_list[0].Location = "Classroom"      # some location from LocationList
-###             NPC_list[0].Events_library = []         # similar to Player's Events_library, but does not notify screen when change occurs, and changes location attribute of NPC
-
-### Background screen:
-###     Used to be able to refresh current screen (must track what the correct background image is - necessary for real-time cloeck refresh).
-###     To refresh the correct current screen, set "bg_current" and call "Refresh_current_background()" instead of manually setting "scene bg_class".
-###             bg_current = "Classroom"
-###             call Refresh_current_background()
-
-### Checking correct function for current screen based on time:
-###     Instead of timer hard-coding what to update in "check_events_timer()",
-###         set a variable "timer_update_function_name".
-###         This can be replaced with a different value to update a specific function based on your current screen.
-#               timer_update_function_name = "check_events"
-default timer_update_function_name = "check_events"

@@ -39,30 +39,30 @@ label library:
             jump imagemap_done
 return
 
-label self_study:
-    $ randStudy = renpy.random.randint(1,3)
-    "Good choice, [player_name]. You just add [randStudy] percent on your study. "
-    $ player_study_local += randStudy
-    $ player_health_local -= 20
-    jump library
-    return
+#label self_study:
+#    $ randStudy = renpy.random.randint(1,3)
+#    "Good choice, [player_name]. You just add [randStudy] percent on your study. "
+#    $ player_study_local += randStudy
+#    $ player_health_local -= 20
+#    jump library
+#    return
 
-label study_group:
-    $ randStudy = renpy.random.randint(1,2)
-    $ randSocial = renpy.random.randint(1,2)
-    "Not bad, [player_name]. You just add [randStudy] percent on you study and [randSocial] percent on social."
-    $ player_social_local += randSocial
-    $ player_study_local += randStudy
-    $ player_health_local -= 25
-    jump library
-    return
+#label study_group:
+#    $ randStudy = renpy.random.randint(1,2)
+#    $ randSocial = renpy.random.randint(1,2)
+#    "Not bad, [player_name]. You just add [randStudy] percent on you study and [randSocial] percent on social."
+#    $ player_social_local += randSocial
+#    $ player_study_local += randStudy
+#    $ player_health_local -= 25
+#    jump library
+#    return
 
-label workshop:
-    "The workshop is really helping with the concerns. 5 percent on your study, [player_name]."
-    $ player_health_local -= 30
-    $ player_study_local += 5
-    jump library
-    return
+#label workshop:
+#    "The workshop is really helping with the concerns. 5 percent on your study, [player_name]."
+#    $ player_health_local -= 30
+#    $ player_study_local += 5
+#    jump library
+#    return
 
 label advancetime:
     $ update_time()
@@ -80,10 +80,10 @@ label home:
     e "You chose to go home from MY EXAMPLE."
     jump imagemap_done
 
-label imagemap_done:
-    scene bg_Uni
-    show eileen happy
-    e "Let's go back to the map."
-    jump imagemap_uni
+#label imagemap_done:
+#    scene bg_Uni
+#    show eileen happy
+#    e "Let's go back to the map."
+#    jump imagemap_uni
 
-    return
+#    return

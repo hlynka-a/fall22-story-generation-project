@@ -4,22 +4,42 @@ transform alpha_dissolve:
     on hide:
         linear 0.5 alpha 0
 
+#label display_timer:
+
+#    $ time_to_exit = False
+#    $ Minutes = 0
+#    $ Hours = 0
+
+#    $ bg_current = "Classroom"
+#    $ timer_update_function_name = "check_events"
+#    call Refresh_current_background()
+#    show screen timer_logic()
+#    show screen timer_screen()
+#    show screen debug_time_menu_screen()
+#    call screen background_screen()
+
+#    return
+
 label display_timer:
-
-    $ time_to_exit = False
-    $ Minutes = 0
-    $ Hours = 0
-
-    #scene bg_class
-    $ bg_current = "Classroom"
-    $ timer_update_function_name = "check_events"
-    call Refresh_current_background()
     show screen timer_logic()
     show screen timer_screen()
-    show screen debug_time_menu_screen()
-    call screen background_screen()
-    #show screen background_screen()
-
+    if player_location == "Classroom":
+        show screen NPC_image_v2()
+        call screen background_screen_class()
+    if player_location == "Residence":
+        show screen NPC_image_v2()
+        call screen background_screen_residence()
+    if player_location == "Library":
+        call screen background_screen_library()
+    if player_location == "Park":
+        show screen NPC_image_v2()
+        call screen background_screen_park()
+    if player_location == "Gym":
+        show screen NPC_image_v2()
+        call screen background_screen_gym()
+    if player_location == "Cafeteria":
+        show screen NPC_image_v2()
+        call screen background_screen_cafe()
     return
 
 label overlay_timer:
@@ -66,17 +86,34 @@ label check_events_timer:
     $ renpy.call(timer_update_function_name)
     return
 
+#label update_time:
+#    if (time_to_exit == True):
+#        return
+
+#    if (real_time == True):
+#        $ Minutes = Minutes + 5;
+#        call current_time
+#    call check_events_timer()
+#    call refresh_current_screen()
+
 label update_time:
-    #$ renpy.notify("time_to_exit = " + str(time_to_exit))
     if (time_to_exit == True):
         return
-
     if (real_time == True):
         #$ Minutes = Minutes + 1;
         $ Minutes = Minutes + 5;
         call current_time
-    call check_events_timer()
-    call refresh_current_screen()
+    call check_events
+    call NPC_schedule_v2_event_update
+    #$ renpy.call("NPC_schedule_v2_event_update")
+    if Hours == 17:
+        call event_recommand_today
+    call display_timer
+
+    if Parts == 3:
+        call exit_classroom
+        call Residence
+    return
 
 
 label refresh_current_screen:
@@ -90,29 +127,35 @@ label refresh_current_screen:
     #call screen renpy.current_screen().screen_name[0]
     $ renpy.call_screen("%s"%(current_screen_name))
 
-label pause_real_time:
-    $ real_time = False
-    call refresh_current_screen()
+#label pause_real_time:
+#    $ real_time = False
+#    call refresh_current_screen()
 
-label resume_real_time:
-    $ real_time = True
-    call refresh_current_screen()
+#label resume_real_time:
+#    $ real_time = True
+#    call refresh_current_screen()
+
+#label increase_time(time_to_add):
+#    $ Hours = Hours + time_to_add
+#    call current_time()
+#    call refresh_current_screen()
 
 label increase_time(time_to_add):
-    #$ Minutes = Minutes + time_to_add
     $ Hours = Hours + time_to_add
+    call update_player_statement
     call current_time()
-    call refresh_current_screen()
+    call display_timer
+    return
 
-label decrease_time(time_to_remove):
-    #$ Minutes = Minutes - time_to_remove
-    $ Hours = Hours - time_to_remove
-    call current_time()
-    call refresh_current_screen()
+#label decrease_time(time_to_remove):
+#    #$ Minutes = Minutes - time_to_remove
+#    $ Hours = Hours - time_to_remove
+#    call current_time()
+#    call refresh_current_screen()
 
-label go_to_different_screen(name_of_new_screen):
-    $ current_screen_name = name_of_new_screen
-    call refresh_current_screen()
+#label go_to_different_screen(name_of_new_screen):
+#    $ current_screen_name = name_of_new_screen
+#    call refresh_current_screen()
 
 
 #screen background_screen:
@@ -152,6 +195,8 @@ label current_time:
     if Minutes > 59:
         $ Minutes = 0
         $ Hours += 1
+        call update_player_statement
+
     if Hours > 23:
         $ Hours = 0
         $ Days += 1
@@ -175,4 +220,50 @@ label current_time:
         $ Parts = 2
     if Hours < 4 or Hours > 21:
         $ Parts = 3
+    return
+
+label check_events:
+    call event_notify_today
+    $ ee = 0
+    while ee < len(Events_library):
+        if Events_library[ee].eventcheck(WeekDays[Days],Hours,Minutes,True):
+            $ output_event_info = Events_library[ee].event_name
+            $ output_event_info += " happens now."
+            if player_location == Events_library[ee].event_location:
+                $ player_participate = True
+            $ renpy.notify(output_event_info)
+        if Events_library[ee].eventinactive(WeekDays[Days],Hours,Minutes,True):
+            $ output_event_info = Events_library[ee].event_name
+            $ output_event_info += " ends now."
+            $ player_participate = False
+            #"[output_event_info]"
+            $ renpy.notify(output_event_info)
+        #if  Events_library[ee].eventhappennow(WeekDays[Days],Hours,Minutes,True):
+        #    if player_location == Events_library[ee].event_location:
+        #        $ player_participate = True
+        #    else:
+        #        $ player_participate = False
+        $ ee += 1
+    return
+
+label reset_labels:
+    $ event_notify = False
+    $ event_recommand = False
+    $ player_participate = False
+    call reset_irregular_event
+    if renpy.random.randint(1,3) == 1:
+        $ event_randomize = True
+    return
+
+label update_player_statement:
+    if player_location == "Classroom":
+        call update_player_statement_classroom
+    if player_location == "Residence":
+        call update_player_statement_residence
+    if player_location == "Park":
+        call update_player_statement_park
+    if player_location == "Gym":
+        call update_player_statement_gym
+    if player_location == "Cafeteria":
+        call update_player_statement_cafe
     return

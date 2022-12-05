@@ -20,12 +20,12 @@ image pk_hover = im.Scale("park hovered.jpg", 100, 100)
 image at_idle = im.Scale("advance time idle.jpg", 300, 100)
 image at_hover = im.Scale("advance time hovered.jpg", 300, 100)
 
-default player_study_local = 10
-default player_social_local = 10
-default player_health_local = 100
-default player_name = "Anonymous"
-default player_priorities = ["Study","Health","Social"]
-default player_flag = False
+#default player_study_local = 10
+#default player_social_local = 10
+#default player_health_local = 100
+#default player_name = "Anonymous"
+#default player_priorities = ["Study","Health","Social"]
+#default player_flag = False
 
 default NPC_study_local = 10
 default NPC_social_local = 10
@@ -33,16 +33,16 @@ default NPC_health_local = 100
 
 #default Minutes = 0
 #default Hours = 8
-default Parts = 0
+#default Parts = 0
 #default Days = 0
 #default WeekDays = ["Mon","Tue","Wed","Thu","Fri"]
 #default Chunks = ["Morning","Afternoon","Evening","Night"]
 
 
-default no_event = True
-default real_time = True
-default time_to_exit = False
-default current_screen_name = "background_screen"
+#default no_event = True
+#default real_time = True
+#default time_to_exit = False
+#default current_screen_name = "background_screen"
 
 label start:
     scene bg_Uni
@@ -54,7 +54,8 @@ label start:
         "Debug Features Menu":
             jump Debug_features_menu
         "Quit":
-            $ renpy.quit();
+            #$ renpy.quit();
+            $ MainMenu(confirm=False)()
 
 
     return

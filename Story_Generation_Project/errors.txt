@@ -2,10 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/ScheduleGenerator.rpy", line 30: expected an indented block
-            if self.event_day != e_d:
-             ^
-    
+The label check_events is defined twice, at File "game/ScheduleGenerator.rpy", line 80:
+label check_events:
+and File "game/Timer.rpy", line 216:
+label check_events:
+
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Sat Dec  3 22:36:10 2022
+Mon Dec  5 03:19:25 2022

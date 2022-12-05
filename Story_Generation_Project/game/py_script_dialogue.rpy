@@ -112,14 +112,18 @@ init python:
         global temp_current_minute;
         global temp_current_location;
 
-        temp_player_study = Player_study;
-        temp_player_social = Player_social;
-        temp_player_health = Player_health;
+        #temp_player_study = Player_study;
+        #temp_player_social = Player_social;
+        #temp_player_health = Player_health;
+        temp_player_study = player_study_local;
+        temp_player_social = player_social_local;
+        temp_player_health = player_health_local;
 
         temp_current_day = Days;
         temp_current_hour = Hours;
         temp_current_minute = Minutes;
-        temp_current_location = Location;
+        #temp_current_location = Location;
+        temp_current_location = player_location;
         #renpy.notify("updateDialogueVariables() called. Location = "+ temp_current_location);
 
     def initializeDialogue():

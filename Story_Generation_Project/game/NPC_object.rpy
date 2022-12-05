@@ -37,15 +37,15 @@ init python:
             # can we direct what locations to go to (example: NPC 'study' stat is low, so they will want to go to the Library today)
             randInt = random.randrange(0,10);
             if (randInt % 3 == 0):
-                randomSchedule.append(Event("Library", "Mon", 8, 0, 10, 0, False));
+                randomSchedule.append(Event("Park", "Mon", 8, 0, 10, 0, False));
                 randomSchedule.append(Event("Classroom","Mon", 10,0,12,0,False));
-                randomSchedule.append(Event("Cafe","Mon",12,0,14,0,False));
+                randomSchedule.append(Event("Cafeteria","Mon",12,0,14,0,False));
                 randomSchedule.append(Event("Park","Mon",14,0,17,0,False));
             elif (randInt % 3 == 1):
-                randomSchedule.append(Event("Library", "Mon", 7, 0, 9, 0, False));
+                randomSchedule.append(Event("Cafeteria", "Mon", 7, 0, 9, 0, False));
                 randomSchedule.append(Event("Classroom","Mon", 10,0,12,0,False));
                 randomSchedule.append(Event("Park","Mon",12,0,14,0,False));
-                randomSchedule.append(Event("Cafe","Mon",14,0,17,0,False));
+                randomSchedule.append(Event("Cafeteria","Mon",14,0,17,0,False));
             elif (randInt % 3 == 2):
                 randomSchedule.append(Event("Park", "Mon", 7, 0, 9, 0, False));
                 randomSchedule.append(Event("Library","Mon", 9,0,11,0,False));
@@ -75,7 +75,7 @@ init python:
     #           Should "mood" also be a variable?
     #           Does mood change based on whether they go to places they like that day, or how the Player talks to them?
 
-
+    npcTalkingNow = False;
 
     def defineRandomNPCs(n):
         startTime = time.time();
@@ -103,11 +103,11 @@ label check_NPC_events():
         $ event_index = 0
         $ location_was_set = False
         while event_index < len(NPC_list[npc_index].Events_library):
-            if NPC_list[npc_index].Events_library[event_index].eventcheck(WeekDays[Days],Hours,Minutes):
+            if NPC_list[npc_index].Events_library[event_index].npceventcheck(WeekDays[Days],Hours,Minutes):
                 $ output_event_info = NPC_list[npc_index].Events_library[event_index].event_name
                 #$ output_event_info += " - NPC (" + NPC_list[npc_index].npc_firstname + " " + NPC_list[npc_index].npc_lastname + ") happens now."
                 #$ renpy.notify(output_event_info)
-            if NPC_list[npc_index].Events_library[event_index].eventinactive(WeekDays[Days],Hours,Minutes):
+            if NPC_list[npc_index].Events_library[event_index].npceventinactive(WeekDays[Days],Hours,Minutes):
                 $ output_event_info = NPC_list[npc_index].Events_library[event_index].event_name
                 #$ output_event_info += " - NPC (" + NPC_list[npc_index].npc_firstname + " " + NPC_list[npc_index].npc_lastname + ") ends now."
                 #"[output_event_info]"
