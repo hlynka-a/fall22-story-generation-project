@@ -88,6 +88,7 @@ init python:
         endTime = time.time();
         renpy.notify("Time it took to generate " + str(len(NPC_list)) + " NPC's = " + str(endTime - startTime) + " seconds.");
 
+    temp_NPCs_at_location = []
     def get_NPCs_at_location(someLocation):
         list_of_NPCs_at_location = []
         npc_index = 0
