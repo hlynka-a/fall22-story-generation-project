@@ -69,7 +69,6 @@ screen NPC_image_v2():
 
     if (npcTalkingNow == False):
         $ numOfNPCsAtLocation = len(listOfNPCsAtLocation)
-
         for i in range(0,numOfNPCsAtLocation):
             imagebutton:
                 xpos 0.8 + (0.1*(int(i/4)))
@@ -134,9 +133,14 @@ label talk_to_NPC_v2:
     $ temp_this_study = listOfNPCsAtLocation[NPCsAtLocationIndex].npc_study
     $ temp_this_social = listOfNPCsAtLocation[NPCsAtLocationIndex].npc_social
     $ temp_this_health = listOfNPCsAtLocation[NPCsAtLocationIndex].npc_health
-    $ sentence = getTraceryDialogue()
-    "[NPC_name]: [sentence]"
+    if (listOfNPCsAtLocation[NPCsAtLocationIndex].npc_study < 95 ):
+        call study_buddy
+    else:
+        $ sentence = getTraceryDialogue()
+        "[NPC_name]: [sentence]"
 
+    
+    
     $ real_time = real_time_temp
     $ time_to_exit = False
     $ npcTalkingNow = False
@@ -156,7 +160,4 @@ label NPC_schedule_v2_event_update:
     #call create_NPC_image_v2(len(listOfNPCs))
     #call create_NPC_image_v2()
     show screen NPC_image_v2()
-    if (listOfNPCsAtLocation != temp_NPCs_at_location):
-        hide screen NPC_statements_bars_v2
-    $ temp_NPCs_at_location = listOfNPCsAtLocation
     call display_timer
