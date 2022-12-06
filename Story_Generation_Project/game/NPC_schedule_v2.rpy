@@ -69,6 +69,7 @@ screen NPC_image_v2():
 
     if (npcTalkingNow == False):
         $ numOfNPCsAtLocation = len(listOfNPCsAtLocation)
+
         for i in range(0,numOfNPCsAtLocation):
             imagebutton:
                 xpos 0.8 + (0.1*(int(i/4)))
@@ -155,4 +156,7 @@ label NPC_schedule_v2_event_update:
     #call create_NPC_image_v2(len(listOfNPCs))
     #call create_NPC_image_v2()
     show screen NPC_image_v2()
+    if (listOfNPCsAtLocation != temp_NPCs_at_location):
+        hide screen NPC_statements_bars_v2
+    $ temp_NPCs_at_location = listOfNPCsAtLocation
     call display_timer
