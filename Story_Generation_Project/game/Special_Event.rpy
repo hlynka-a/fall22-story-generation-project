@@ -24,8 +24,8 @@ label update_test_sp_evt_stat():
             $ temp_current_location = "Classroom";
         else:
             $ temp_current_location = "Library";
-    #elif (statType == 8):
-    #    $ Day = Day + 1;
+    elif (statType == 8):
+        $ Days = Days + statValue;
     call screen test_special_event_screen()
 
 
@@ -33,16 +33,16 @@ screen test_special_event_screen():
     $ statType = 0
     $ statValue = 0
 
-    #textbutton "{size=28}{color=#FFF}Day +{/color}{/size}":
-    #    background "#000"
-    #    xpos 1000
-    #    ypos 150
-    #    action [SetVariable("statType",1),SetVariable("statValue",5), Jump("update_test_sp_evt_stat")]
-    #textbutton "{size=28}{color=#FFF}Day -{/color}{/size}":
-    #    background "#000"
-    #    xpos 1300
-    #    ypos 150
-    #    action [SetVariable("statType",1),SetVariable("statValue",-5), Jump("update_test_sp_evt_stat")]
+    textbutton "{size=28}{color=#FFF}Day +{/color}{/size}":
+        background "#000"
+        xpos 1000
+        ypos 150
+        action [SetVariable("statType",8),SetVariable("statValue",1), Jump("update_test_sp_evt_stat")]
+    textbutton "{size=28}{color=#FFF}Day -{/color}{/size}":
+        background "#000"
+        xpos 1300
+        ypos 150
+        action [SetVariable("statType",8),SetVariable("statValue",-1), Jump("update_test_sp_evt_stat")]
 
     textbutton "{size=28}{color=#FFF}Player Study +{/color}{/size}":
         background "#000"
@@ -128,7 +128,8 @@ screen test_special_event_screen():
         ypos 600
         action Jump("exit_dialogue_tracery_screen")
 
-    #$ this_temp_day = Day
+    $ this_temp_day = Days
+    $ this_temp_dayname = WeekDays[Days % 5]
     $ this_temp_player_study = temp_player_study
     $ this_temp_player_social = temp_player_social
     $ this_temp_player_health = temp_player_health
@@ -136,10 +137,14 @@ screen test_special_event_screen():
     $ this_temp_this_social = temp_this_social
     $ this_temp_this_health = temp_this_health
     $ this_temp_current_location = temp_current_location
-    #textbutton "{size=28}{color=#F00}Day = [this_temp_day]{/color}{/size}":
-    #    background "#000"
-    #    xpos 1600
-    #    ypos 150
+    textbutton "{size=28}{color=#F00}Day = [this_temp_day]{/color}{/size}":
+        background "#000"
+        xpos 1600
+        ypos 150
+    textbutton "{size=28}{color=#F00}[this_temp_dayname]{/color}{/size}":
+        background "#000"
+        xpos 1750
+        ypos 150
     textbutton "{size=28}{color=#F00}Player Study = [this_temp_player_study]{/color}{/size}":
         background "#000"
         xpos 1600
@@ -195,7 +200,11 @@ label study_buddy:
             $ temp_player_study = temp_player_study + 10;
         "No":
             e "Oh, I hope to meet you on Friday then"
-    
+
     call screen test_special_event_screen
 
 
+label final_evalutatiom:
+
+
+    call screen test_special_event_screen

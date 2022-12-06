@@ -63,4 +63,4 @@ NameError: name 'Day' is not defined
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.0.3.22090809
 Story_Generation_Project 1.1204
-Mon Dec  5 15:01:41 2022
+Tue Dec  6 11:32:33 2022
