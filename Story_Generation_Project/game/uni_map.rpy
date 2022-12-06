@@ -135,6 +135,16 @@ screen imagemap_university():
         ]
         action [Hide("location_population_display"),Jump("Residence")]
 
+    imagebutton:
+        # Residence
+        xpos 700
+        ypos 300
+        idle "re_idle"
+        hover "re_hover"
+        #hovered Notify(notify_message_park)
+        #action Jump("Residence")
+        action [Jump("display_NPC_list_summary")]
+
     #imagebutton:
     #    xpos 100
     #    ypos 600

@@ -7,7 +7,7 @@ define e = Character("Eileen")
 
 image bg_Uni = im.Scale("bg CarletonU.jpg", 1920, 1080)
 image bg_lib = im.Scale("bg Library.jpg", 1920, 1080)
-image bg_clock = im.Scale("bg Clock.jpg", 1920, 1080)
+#image bg_clock = im.Scale("bg Clock.jpg", 1920, 1080)
 image bg_class = im.Scale("bg Classroom.jpg", 1920, 1080)
 image bg_residence = im.Scale("bg Residence.jpg", 1920, 1080)
 default bg_current = "Classroom"

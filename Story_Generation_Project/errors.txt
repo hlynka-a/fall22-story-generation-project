@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/NPC_schedule_v2.rpy", line 161: end of line expected.
-    hide screen NPC_statement_bars_v2()
-                                     ^
+File "game/NPC_object.rpy", line 146: expected a keyword argument, colon, or end of line.
+    add text "------------------------"
+             ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Tue Dec  6 12:03:58 2022
+Tue Dec  6 12:23:13 2022

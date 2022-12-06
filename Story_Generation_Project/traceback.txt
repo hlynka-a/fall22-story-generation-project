@@ -1,25 +1,31 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/Special_Event.rpy", line 4, in script
-    call screen test_special_event_screen
+  File "game/NPC_object.rpy", line 128, in script
+    call screen screen_NPC_list_summary
   File "renpy/common/000statements.rpy", line 609, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/Special_Event.rpy", line 32, in execute
-    screen test_special_event_screen():
-  File "game/Special_Event.rpy", line 32, in execute
-    screen test_special_event_screen():
-  File "game/Special_Event.rpy", line 131, in execute
-    $ this_temp_day = Day
-  File "game/Special_Event.rpy", line 131, in <module>
-    $ this_temp_day = Day
-NameError: name 'Day' is not defined
+  File "game/NPC_object.rpy", line 131, in execute
+    screen screen_NPC_list_summary():
+  File "game/NPC_object.rpy", line 131, in execute
+    screen screen_NPC_list_summary():
+  File "game/NPC_object.rpy", line 134, in execute
+    frame:
+  File "game/NPC_object.rpy", line 136, in execute
+    vpgrid:
+  File "game/NPC_object.rpy", line 148, in execute
+    for i in range(0, len(listOfNPC)):
+  File "game/NPC_object.rpy", line 149, in execute
+    $ NPC_name = listOfNPC[i].npc_firstname + " " + listOfNPC[i].npc_lastname + " " + listOfNPC[i].npc_study + " " + listOfNPC[i].npc_social + " " + listOfNPC[i].npc_health
+  File "game/NPC_object.rpy", line 149, in <module>
+    $ NPC_name = listOfNPC[i].npc_firstname + " " + listOfNPC[i].npc_lastname + " " + listOfNPC[i].npc_study + " " + listOfNPC[i].npc_social + " " + listOfNPC[i].npc_health
+TypeError: can only concatenate str (not "int") to str
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/Special_Event.rpy", line 4, in script
-    call screen test_special_event_screen
+  File "game/NPC_object.rpy", line 128, in script
+    call screen screen_NPC_list_summary
   File "C:\Users\hlynk\OneDrive\Desktop\UNIVERSITY\PhD_Calreton\Classes\F22_COMP_5900_J_game_dev_technologies\renpy-8.0.3-sdk.7z\renpy-8.0.3-sdk\renpy\ast.py", line 2232, in execute
     self.call("execute")
   File "C:\Users\hlynk\OneDrive\Desktop\UNIVERSITY\PhD_Calreton\Classes\F22_COMP_5900_J_game_dev_technologies\renpy-8.0.3-sdk.7z\renpy-8.0.3-sdk\renpy\ast.py", line 2220, in call
@@ -50,17 +56,23 @@ Full traceback:
     self.update()
   File "C:\Users\hlynk\OneDrive\Desktop\UNIVERSITY\PhD_Calreton\Classes\F22_COMP_5900_J_game_dev_technologies\renpy-8.0.3-sdk.7z\renpy-8.0.3-sdk\renpy\display\screen.py", line 653, in update
     self.screen.function(**self.scope)
-  File "game/Special_Event.rpy", line 32, in execute
-    screen test_special_event_screen():
-  File "game/Special_Event.rpy", line 32, in execute
-    screen test_special_event_screen():
-  File "game/Special_Event.rpy", line 131, in execute
-    $ this_temp_day = Day
-  File "game/Special_Event.rpy", line 131, in <module>
-    $ this_temp_day = Day
-NameError: name 'Day' is not defined
+  File "game/NPC_object.rpy", line 131, in execute
+    screen screen_NPC_list_summary():
+  File "game/NPC_object.rpy", line 131, in execute
+    screen screen_NPC_list_summary():
+  File "game/NPC_object.rpy", line 134, in execute
+    frame:
+  File "game/NPC_object.rpy", line 136, in execute
+    vpgrid:
+  File "game/NPC_object.rpy", line 148, in execute
+    for i in range(0, len(listOfNPC)):
+  File "game/NPC_object.rpy", line 149, in execute
+    $ NPC_name = listOfNPC[i].npc_firstname + " " + listOfNPC[i].npc_lastname + " " + listOfNPC[i].npc_study + " " + listOfNPC[i].npc_social + " " + listOfNPC[i].npc_health
+  File "game/NPC_object.rpy", line 149, in <module>
+    $ NPC_name = listOfNPC[i].npc_firstname + " " + listOfNPC[i].npc_lastname + " " + listOfNPC[i].npc_study + " " + listOfNPC[i].npc_social + " " + listOfNPC[i].npc_health
+TypeError: can only concatenate str (not "int") to str
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.0.3.22090809
 Story_Generation_Project 1.1204
-Tue Dec  6 11:32:33 2022
+Tue Dec  6 12:49:12 2022

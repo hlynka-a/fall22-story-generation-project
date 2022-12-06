@@ -1,0 +1,35 @@
+bg Carleton.jpg
+"Usage Rights: Approved for External Usage"
+https://brand.carleton.ca/media/?mediaId=29E234EE-06E0-4A31-9DC803CC5916F081
+
+bg Classroom.jpg
+"Usage Rights: Approved for External Usage"
+https://brand.carleton.ca/media/?mediaId=2FADB448-2882-4FAC-A3217E54ACA4B8C4
+
+bg Clock.jpg
+"Usage Rights: Approved for External Usage"
+https://brand.carleton.ca/media/?mediaId=EE1C9344-424D-422A-A73A4D6035890A17
+
+bg Gym.jpg 
+"Usage Rights: Approved for External Usage"
+https://brand.carleton.ca/media/?mediaId=63B30272-C24D-43CC-B7C6D8EEB1EA320D
+
+bg Library.jpg
+"Usage Rights: Approved for External Usage"
+https://brand.carleton.ca/media/?mediaId=7BB6E068-CD59-4921-83EB32764461A486
+
+bg Lounge.jpg
+"Usage Rights: Approved for External Usage"
+https://brand.carleton.ca/media/?mediaId=05F5B252-5B21-46BB-8CE5AE153405552F
+
+bg Park.jpg
+"Usage Rights: Approved for External Usage"
+https://brand.carleton.ca/media/?mediaId=101DA129-E94D-4EAA-82BEF984B821A46F
+
+bg Residence.jpg
+"Usage Rights: Approved for External Usage"
+https://brand.carleton.ca/media/?mediaId=23C55503-6E95-480C-AFACF2620F644C36
+
+imagemap ground.jpg
+"Usage Rights: Approved for External Usage"
+https://brand.carleton.ca/media/?mediaId=A408D492-3C70-41D2-8EF8365DD82A3E7F

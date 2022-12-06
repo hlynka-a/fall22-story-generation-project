@@ -122,3 +122,39 @@ label check_NPC_events():
             $ NPC_list[npc_index].Location = "Residence"
         $ npc_index = npc_index + 1
     return
+
+label display_NPC_list_summary():
+    e "Let's see how all the students are doing!"
+    call screen screen_NPC_list_summary
+    return
+
+screen screen_NPC_list_summary():
+
+    $ listOfNPC = NPC_list
+    frame:
+        xalign 0.5 ypos 300
+        vpgrid:
+            cols 1
+            xalign 1.0 ypos 0 xysize (800, 600)
+            child_size (800, 100)
+            scrollbars "vertical"
+            side_spacing 5
+            mousewheel True
+            arrowkeys True
+            #add text "Library"
+            #add text "There are 0 people here"
+            text "---------------------------------------------------------------"
+            text "Name:_Study:_Social:_Health:_"
+            for i in range(0, len(listOfNPC)):
+                $ NPC_name = listOfNPC[i].npc_firstname + " " + listOfNPC[i].npc_lastname + " " + str(listOfNPC[i].npc_study) + " " + str(listOfNPC[i].npc_social) + " " + str(listOfNPC[i].npc_health)
+                text "[NPC_name]"
+            text ""
+    imagebutton:
+        # Residence
+        xpos 1600
+        ypos 300
+        idle "re_idle"
+        hover "re_hover"
+        #hovered Notify(notify_message_park)
+        #action Jump("Residence")
+        action [Jump("uni_map")]
