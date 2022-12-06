@@ -143,6 +143,7 @@ label refresh_current_screen:
 label increase_time(time_to_add):
     $ Hours = Hours + time_to_add
     call update_player_statement
+    $ update_NPC_statement()
     call current_time()
     call display_timer
     return
@@ -196,6 +197,7 @@ label current_time:
         $ Minutes = 0
         $ Hours += 1
         call update_player_statement
+        $ update_NPC_statement()
 
     if Hours > 23:
         $ Hours = 0

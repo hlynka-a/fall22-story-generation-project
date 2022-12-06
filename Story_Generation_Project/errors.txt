@@ -2,9 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/NPC_schedule_v2.rpy", line 74: expected a keyword argument or child statement.
-    $ check_special_event = special_event_can_occur(listOfNPCsAtLocation, i)
-    ^
+File "game/NPC_object.rpy", line 142: invalid syntax
+            npc_index++;
+                        ^
+    
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Tue Dec  6 15:12:34 2022
+Tue Dec  6 15:58:22 2022

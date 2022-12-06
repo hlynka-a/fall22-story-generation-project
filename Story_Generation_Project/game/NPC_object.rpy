@@ -105,6 +105,43 @@ init python:
             npc_index = npc_index + 1
         return list_of_NPCs_at_location
 
+    def update_NPC_statement():
+        global NPC_list
+        npc_index = 0
+        while (npc_index < len(NPC_list)):
+            if (NPC_list[npc_index].Location == "Library"):
+                NPC_list[npc_index].npc_study = 50;
+            elif (NPC_list[npc_index].Location == "Classroom"):
+                NPC_list[npc_index].npc_study += renpy.random.randint(3,5)
+                NPC_list[npc_index].npc_health -= renpy.random.randint(5,8)
+            elif (NPC_list[npc_index].Location == "Park"):
+                NPC_list[npc_index].npc_health += renpy.random.randint(20,25)
+            elif (NPC_list[npc_index].Location == "Gym"):
+                NPC_list[npc_index].npc_study -= 4
+                NPC_list[npc_index].npc_health += 10
+            elif (NPC_list[npc_index].Location == "Cafeteria"):
+                NPC_list[npc_index].npc_health += renpy.random.randint(8,10)
+                NPC_list[npc_index].npc_health += renpy.random.randint(5,8)
+            elif (NPC_list[npc_index].Location == "Residence"):
+                NPC_list[npc_index].npc_study -= 1
+                NPC_list[npc_index].npc_health += 10
+
+            if (NPC_list[npc_index].npc_study < 0):
+                NPC_list[npc_index].npc_study = 0;
+            if (NPC_list[npc_index].npc_study > 100):
+                NPC_list[npc_index].npc_study = 100;
+            if (NPC_list[npc_index].npc_social < 0):
+                NPC_list[npc_index].npc_social = 0;
+            if (NPC_list[npc_index].npc_social > 100):
+                NPC_list[npc_index].npc_social = 100;
+            if (NPC_list[npc_index].npc_health < 0):
+                NPC_list[npc_index].npc_health = 0;
+            if (NPC_list[npc_index].npc_health > 100):
+                NPC_list[npc_index].npc_health = 100;
+
+            npc_index = npc_index + 1;
+        return;
+
 label check_NPC_events():
     $ npc_index = 0
     while (npc_index < len(NPC_list)):
@@ -151,17 +188,24 @@ screen screen_NPC_list_summary():
             #add text "Library"
             #add text "There are 0 people here"
             text "---------------------------------------------------------------"
-            text "Name:_Study:_Social:_Health:_"
+            text "Name:    Study:    Social:    Health:"
             for i in range(0, len(listOfNPC)):
-                $ NPC_name = listOfNPC[i].npc_firstname + " " + listOfNPC[i].npc_lastname + " " + str(listOfNPC[i].npc_study) + " " + str(listOfNPC[i].npc_social) + " " + str(listOfNPC[i].npc_health)
+                $ NPC_name = listOfNPC[i].npc_firstname + " " + listOfNPC[i].npc_lastname + " : " + str(listOfNPC[i].npc_study) + " , " + str(listOfNPC[i].npc_social) + " , " + str(listOfNPC[i].npc_health)
+                #$ NPC_name = listOfNPC[i].npc_firstname
+                #$ NPC_study = str(listOfNPC[i].npc_study)
+                #$ NPC_social = str(listOfNPC[i].npc_social)
+                #$ NPC_health = str(listOfNPC[i].npc_health)
                 text "[NPC_name]"
+                #text "[NPC_study]"
+                #text "[NPC_social]"
+                #text "[NPC_health]"
             text ""
     imagebutton:
-        # Residence
-        xpos 1600
+        # back button
+        xpos 1400
         ypos 300
-        idle "re_idle"
-        hover "re_hover"
+        idle "back idle"
+        hover "back hovered"
         #hovered Notify(notify_message_park)
         #action Jump("Residence")
         action [Jump("uni_map")]
