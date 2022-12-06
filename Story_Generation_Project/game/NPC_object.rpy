@@ -16,6 +16,9 @@ init python:
             self.Location = Location;
             self.Events_library = Events_library;
             self.Personality = Personality;
+            self.special_event_dictionary = {
+                    "study_buddy":False
+                };
         def addEvent(self, event_obj):
             self.Events_library.append(event_obj);
         def defineRandomNPC(self):
@@ -51,6 +54,9 @@ init python:
                 randomSchedule.append(Event("Library","Mon", 9,0,11,0,False));
                 randomSchedule.append(Event("Classroom","Mon",11,0,13,0,False));
                 randomSchedule.append(Event("Park","Mon",13,0,17,0,False));
+
+            # assume we want to reset special events options every time schedule is made
+
             return randomSchedule;
         def updateNPCStat(self, study_add=0, social_add=0, health_add=0):
             self.npc_study = self.npc_study + study_add;
@@ -74,6 +80,8 @@ init python:
     #           What takes priority - personality or current stat values that need to increase?)
     #           Should "mood" also be a variable?
     #           Does mood change based on whether they go to places they like that day, or how the Player talks to them?
+
+
 
     npcTalkingNow = False;
 

@@ -126,7 +126,7 @@ screen test_special_event_screen():
         background "#000"
         xpos 1600
         ypos 600
-        action Jump("exit_dialogue_tracery_screen") 
+        action Jump("exit_dialogue_tracery_screen")
 
     $ this_temp_day = Days
     $ this_temp_dayname = WeekDays[Days % 5]
@@ -188,9 +188,30 @@ label evt_gens:
         jump study_buddy
     else:
         call screen test_special_event_screen
-    
-    
 
+
+
+init python:
+
+    special_event_label = ""
+
+    def special_event_can_occur():
+        global special_event_label
+        if (listOfNPCsAtLocation[NPCsAtLocationIndex].special_event_dictionary["study_buddy"] == False):
+            if (listOfNPCsAtLocation[NPCsAtLocationIndex].npc_study < 95 ):
+                special_event_label = "study_buddy"
+                return True
+        # elif : more events can be added here
+
+        return False
+
+    def special_event_possible(tempNPCList, tempIndex):
+        if (tempNPCList[tempIndex].special_event_dictionary["study_buddy"] == False):
+            if (tempNPCList[tempIndex].npc_study < 95 ):
+                return True
+        # elif : more events can be added here
+        
+        return False
 
 
 
@@ -206,11 +227,13 @@ label study_buddy:
          #   else:
         #        e "Let's go to the library, I need help"
         ##        call screen background_screen_library()
-        #    $ player_study_local = player_study_local + 10
+            $ player_study_local = player_study_local + 10
             e "Thanks for studying"
-            
+            $ listOfNPCsAtLocation[NPCsAtLocationIndex].special_event_dictionary["study_buddy"] = True
+
         "No":
             e "Oh, I hope to meet you on Friday then"
+            $ listOfNPCsAtLocation[NPCsAtLocationIndex].special_event_dictionary["study_buddy"] = False
 
     #call display_timer
     return

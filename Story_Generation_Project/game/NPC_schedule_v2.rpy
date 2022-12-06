@@ -70,10 +70,14 @@ screen NPC_image_v2():
     if (npcTalkingNow == False):
         $ numOfNPCsAtLocation = len(listOfNPCsAtLocation)
         for i in range(0,numOfNPCsAtLocation):
+            $ check_special_event = special_event_possible(listOfNPCsAtLocation, i)
             imagebutton:
-                xpos 0.8 + (0.1*(int(i/4)))
-                ypos 0.1 + (0.2*(i%4))
-                idle "logo base"
+                xpos 0.1 + (0.1*(int(i/3)))
+                ypos 0.4 + (0.2*(i%3))
+                if (check_special_event == True):
+                    idle "logo base excite red"
+                else:
+                    idle "logo base"
                 hover "logo bw"
                 hovered [SetVariable("NPCsAtLocationIndex",i),Show("NPC_statements_bars_v2")]
                 unhovered Hide("NPC_statements_bars_v2")
@@ -99,7 +103,7 @@ screen NPC_statements_bars_v2():
         $ NPC_name = listOfNPCsAtLocation[NPCsAtLocationIndex].npc_firstname + " " + listOfNPCsAtLocation[NPCsAtLocationIndex].npc_lastname
 
     frame:
-        xalign 0.1 ypos 20
+        xalign 0.6 ypos 20
         xsize 500
         vbox:
             spacing 5
@@ -133,14 +137,17 @@ label talk_to_NPC_v2:
     $ temp_this_study = listOfNPCsAtLocation[NPCsAtLocationIndex].npc_study
     $ temp_this_social = listOfNPCsAtLocation[NPCsAtLocationIndex].npc_social
     $ temp_this_health = listOfNPCsAtLocation[NPCsAtLocationIndex].npc_health
-    if (listOfNPCsAtLocation[NPCsAtLocationIndex].npc_study < 95 ):
-        call study_buddy
+    #if (listOfNPCsAtLocation[NPCsAtLocationIndex].npc_study < 95 ):
+    #    call study_buddy
+    if (special_event_can_occur() == True):
+        $renpy.call(special_event_label)
+        #$listOfNPCsAtLocation[NPCsAtLocationIndex].special_event_dictionary[special_event_label] = True;
     else:
         $ sentence = getTraceryDialogue()
         "[NPC_name]: [sentence]"
 
-    
-    
+
+
     $ real_time = real_time_temp
     $ time_to_exit = False
     $ npcTalkingNow = False

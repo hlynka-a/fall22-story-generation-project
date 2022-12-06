@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/NPC_object.rpy", line 146: expected a keyword argument, colon, or end of line.
-    add text "------------------------"
-             ^
+File "game/NPC_schedule_v2.rpy", line 74: expected a keyword argument or child statement.
+    $ check_special_event = special_event_can_occur(listOfNPCsAtLocation, i)
+    ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Tue Dec  6 12:23:13 2022
+Tue Dec  6 15:12:34 2022
