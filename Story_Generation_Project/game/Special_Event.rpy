@@ -126,7 +126,7 @@ screen test_special_event_screen():
         background "#000"
         xpos 1600
         ypos 600
-        action Jump("exit_dialogue_tracery_screen")
+        action Jump("exit_dialogue_tracery_screen") 
 
     $ this_temp_day = Days
     $ this_temp_dayname = WeekDays[Days % 5]
@@ -176,11 +176,20 @@ screen test_special_event_screen():
 
 
 
+
+
 label evt_gens:
+    if (this_temp_day == 30):
+        jump final_evalutatiom
+    else:
+        call screen test_special_event_screen
+
     if (temp_player_study > temp_this_study):
         jump study_buddy
     else:
         call screen test_special_event_screen
+    
+    
 
 
 
@@ -192,19 +201,24 @@ label study_buddy:
     menu:
         "Yes":
             e "I need help with studies"
-            if (temp_current_location == "Library"):
-                e "Thank goodness we are in the library"
-            else:
-                e "Let's go to the library, I need help"
-                $ temp_current_location = "Library";
-            $ temp_player_study = temp_player_study + 10;
+           # if (player_location == "Library"):
+         #       e "Thank goodness we are in the library"
+         #   else:
+        #        e "Let's go to the library, I need help"
+        ##        call screen background_screen_library()
+        #    $ player_study_local = player_study_local + 10
+            e "Thanks for studying"
+            
         "No":
             e "Oh, I hope to meet you on Friday then"
 
-    call screen test_special_event_screen
+    #call display_timer
+    return
 
 
 label final_evalutatiom:
+    if (temp_player_study >= 100 and temp_player_social >= 100 ):
+        e "Wow, you're a total ACE"
 
 
     call screen test_special_event_screen

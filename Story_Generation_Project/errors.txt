@@ -2,7 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/Special_Event.rpy", line 195: Indentation mismatch.
+File "game/Special_Event.rpy", line 213: reached end of line when expecting ':'.
+    if (temp_player_study >= 100 && temp_player_social >= 100 && )
+                                                                  ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Mon Dec  5 15:01:00 2022
+Tue Dec  6 12:04:29 2022

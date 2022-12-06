@@ -133,9 +133,14 @@ label talk_to_NPC_v2:
     $ temp_this_study = listOfNPCsAtLocation[NPCsAtLocationIndex].npc_study
     $ temp_this_social = listOfNPCsAtLocation[NPCsAtLocationIndex].npc_social
     $ temp_this_health = listOfNPCsAtLocation[NPCsAtLocationIndex].npc_health
-    $ sentence = getTraceryDialogue()
-    "[NPC_name]: [sentence]"
+    if (listOfNPCsAtLocation[NPCsAtLocationIndex].npc_study < 95 ):
+        call study_buddy
+    else:
+        $ sentence = getTraceryDialogue()
+        "[NPC_name]: [sentence]"
 
+    
+    
     $ real_time = real_time_temp
     $ time_to_exit = False
     $ npcTalkingNow = False
