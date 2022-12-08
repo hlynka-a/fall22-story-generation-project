@@ -143,7 +143,7 @@ screen imagemap_university():
         hover "summary hovered"
         #hovered Notify(notify_message_park)
         #action Jump("Residence")
-        action [Jump("display_NPC_list_summary")]
+        action [Hide("location_population_display"),Jump("display_NPC_list_summary")]
 
     #imagebutton:
     #    xpos 100
