@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/NPC_object.rpy", line 142: invalid syntax
-            npc_index++;
-                        ^
-    
+File "game/NPC_schedule_v2.rpy", line 171: Line is indented, but the preceding show screen statement statement does not expect a block. Please check this line's indentation.
+    if (listOfNPCsAtLocation != temp_NPCs_at_location):
+    ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Tue Dec  6 15:58:22 2022
+Thu Dec  8 01:39:18 2022

@@ -228,23 +228,39 @@ label check_events:
     call event_notify_today
     $ ee = 0
     while ee < len(Events_library):
-        if Events_library[ee].eventcheck(WeekDays[Days],Hours,Minutes,True):
+        #if Events_library[ee].eventcheck(WeekDays[Days],Hours,Minutes,True):
+        if Events_library[ee].eventcheck2(WeekDays[Days],Hours,Minutes,True):
             $ output_event_info = Events_library[ee].event_name
             $ output_event_info += " happens now."
             if player_location == Events_library[ee].event_location:
                 $ player_participate = True
             $ renpy.notify(output_event_info)
-        if Events_library[ee].eventinactive(WeekDays[Days],Hours,Minutes,True):
+        #if Events_library[ee].eventinactive(WeekDays[Days],Hours,Minutes,True):
+        if Events_library[ee].eventinactive2(WeekDays[Days],Hours,Minutes,True):
             $ output_event_info = Events_library[ee].event_name
             $ output_event_info += " ends now."
             $ player_participate = False
             #"[output_event_info]"
             $ renpy.notify(output_event_info)
+
+        ##############################################################################################
+
+        #    hide screen create_test_NPC_image
+        #    if renpy.random.randint(1,6) != 1:
+        #        $ test_NPC_lucy.Location = "Cafeteria"
+        #    else:
+        #        $ test_NPC_lucy.Location = "Park"
+
+        ##############################################################################################
+
         #if  Events_library[ee].eventhappennow(WeekDays[Days],Hours,Minutes,True):
         #    if player_location == Events_library[ee].event_location:
         #        $ player_participate = True
         #    else:
         #        $ player_participate = False
+
+        ##############################################################################################
+        ##############################################################################################
         $ ee += 1
     return
 
@@ -258,6 +274,16 @@ label reset_labels:
     return
 
 label update_player_statement:
+
+    #############################################################################################
+    #if player_location == "Classroom" and player_participate == True:
+    #    $ test_NPC_lucy.Location = player_location
+    #    call create_test_NPC_image
+    #else:
+    #    $ test_NPC_lucy.Location == "Park"
+    #    hide screen test_NPC_image
+    ##############################################################################################
+
     if player_location == "Classroom":
         call update_player_statement_classroom
     if player_location == "Residence":

@@ -15,6 +15,7 @@ label NPC_schedule_v2:
 label initialize_NPC_schedule_v2:
     $ bg_current = "Library"
     call Refresh_current_background()
+    # 10 NPC's chosen instead of smaller number to allow seeing enough variety in a game playthrough.
     $ defineRandomNPCs(10)
     $ Location = "Library"
     $ timer_update_function_name = "NPC_schedule_v2_event_update"
@@ -167,4 +168,7 @@ label NPC_schedule_v2_event_update:
     #call create_NPC_image_v2(len(listOfNPCs))
     #call create_NPC_image_v2()
     show screen NPC_image_v2()
+    if (listOfNPCsAtLocation != temp_NPCs_at_location):
+        hide screen NPC_statements_bars_v2
+    $ temp_NPCs_at_location = listOfNPCsAtLocation
     call display_timer

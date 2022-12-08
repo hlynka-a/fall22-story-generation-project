@@ -147,6 +147,7 @@ label player_begin_game:
     e "Your adventure at school begins now! Good luck!"
 
     e "Hope you are ready for a new beginning."
+    # 10 NPC's chosen instead of smaller number to allow seeing enough variety in a game playthrough.
     $ defineRandomNPCs(10)
     $ Days = 0
     $ Hours = 8

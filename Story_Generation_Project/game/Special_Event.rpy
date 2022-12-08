@@ -198,7 +198,7 @@ init python:
     def special_event_can_occur():
         global special_event_label
         if (listOfNPCsAtLocation[NPCsAtLocationIndex].special_event_dictionary["study_buddy"] == False):
-            if (listOfNPCsAtLocation[NPCsAtLocationIndex].npc_study < 95 ):
+            if (listOfNPCsAtLocation[NPCsAtLocationIndex].npc_study < 50 ):
                 special_event_label = "study_buddy"
                 return True
         # elif : more events can be added here
@@ -207,10 +207,10 @@ init python:
 
     def special_event_possible(tempNPCList, tempIndex):
         if (tempNPCList[tempIndex].special_event_dictionary["study_buddy"] == False):
-            if (tempNPCList[tempIndex].npc_study < 95 ):
+            if (tempNPCList[tempIndex].npc_study < 50 ):
                 return True
         # elif : more events can be added here
-        
+
         return False
 
 

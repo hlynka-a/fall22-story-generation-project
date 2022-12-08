@@ -54,8 +54,53 @@ init python:
                 randomSchedule.append(Event("Library","Mon", 9,0,11,0,False));
                 randomSchedule.append(Event("Classroom","Mon",11,0,13,0,False));
                 randomSchedule.append(Event("Park","Mon",13,0,17,0,False));
+            return randomSchedule;
+        def defineGuidedNPCSchedule(self):
+            randomSchedule = [];
 
-            # assume we want to reset special events options every time schedule is made
+            randInt = random.randrange(0,10);
+            if (randInt % 2 == 0):
+                if (self.npc_study <= self.npc_social and self.npc_study <= self.npc_health):
+                    randomSchedule.append(Event("Library", WeekDays[Days], 7, 0, 9, 0, False));
+                    randomSchedule.append(Event("Classroom",WeekDays[Days], 10,0,12,0,False));
+                    randomSchedule.append(Event("Cafeteria",WeekDays[Days],12,0,14,0,False));
+                    randomSchedule.append(Event("Park",WeekDays[Days],14,0,17,0,False));
+                elif (self.npc_social <= self.npc_study and self.npc_social <= self.npc_health):
+                    randomSchedule.append(Event("Cafeteria", WeekDays[Days], 7, 0, 9, 0, False));
+                    randomSchedule.append(Event("Classroom",WeekDays[Days], 10,0,12,0,False));
+                    randomSchedule.append(Event("Library",WeekDays[Days],12,0,14,0,False));
+                    randomSchedule.append(Event("Gym",WeekDays[Days],14,0,17,0,False));
+                elif (self.npc_health <= self.npc_study and self.npc_health <= self.npc_social):
+                    randomSchedule.append(Event("Gym", WeekDays[Days], 7, 0, 9, 0, False));
+                    randomSchedule.append(Event("Cafeteria",WeekDays[Days], 10,0,12,0,False));
+                    randomSchedule.append(Event("Classroom",WeekDays[Days],12,0,14,0,False));
+                    randomSchedule.append(Event("Park",WeekDays[Days],14,0,17,0,False));
+                else:
+                    randomSchedule.append(Event("Park", WeekDays[Days], 7, 0, 10, 0, False));
+                    randomSchedule.append(Event("Classroom",WeekDays[Days], 10,0,12,0,False));
+                    randomSchedule.append(Event("Cafeteria",WeekDays[Days],12,0,14,0,False));
+                    randomSchedule.append(Event("Park",WeekDays[Days],14,0,17,0,False));
+            else:
+                if (self.npc_study <= self.npc_social and self.npc_study <= self.npc_health):
+                    randomSchedule.append(Event("Park", WeekDays[Days], 8, 0, 10, 0, False));
+                    randomSchedule.append(Event("Cafeteria",WeekDays[Days], 10,0,12,0,False));
+                    randomSchedule.append(Event("Classroom",WeekDays[Days],13,0,15,0,False));
+                    randomSchedule.append(Event("Library",WeekDays[Days],15,0,17,0,False));
+                elif (self.npc_social <= self.npc_study and self.npc_social <= self.npc_health):
+                    randomSchedule.append(Event("Gym", WeekDays[Days], 8, 0, 10, 0, False));
+                    randomSchedule.append(Event("Library",WeekDays[Days], 10,0,12,0,False));
+                    randomSchedule.append(Event("Classroom",WeekDays[Days],13,0,15,0,False));
+                    randomSchedule.append(Event("Cafeteria",WeekDays[Days],15,0,17,0,False));
+                elif (self.npc_health <= self.npc_study and self.npc_health <= self.npc_social):
+                    randomSchedule.append(Event("Park", WeekDays[Days], 8, 0, 10, 0, False));
+                    randomSchedule.append(Event("Classroom",WeekDays[Days], 10,0,12,0,False));
+                    randomSchedule.append(Event("Cafeteria",WeekDays[Days],13,0,15,0,False));
+                    randomSchedule.append(Event("Gym",WeekDays[Days],15,0,17,0,False));
+                else:
+                    randomSchedule.append(Event("Park", WeekDays[Days], 8, 0, 10, 0, False));
+                    randomSchedule.append(Event("Classroom",WeekDays[Days], 10,0,12,0,False));
+                    randomSchedule.append(Event("Cafeteria",WeekDays[Days],12,0,14,0,False));
+                    randomSchedule.append(Event("Park",WeekDays[Days],14,0,17,0,False));
 
             return randomSchedule;
         def updateNPCStat(self, study_add=0, social_add=0, health_add=0):
@@ -96,6 +141,15 @@ init python:
         endTime = time.time();
         renpy.notify("Time it took to generate " + str(len(NPC_list)) + " NPC's = " + str(endTime - startTime) + " seconds.");
 
+    def defineNextNPCSchedule():
+        global NPC_list
+        npc_index = 0
+        renpy.notify("next NPC schedule updated.")
+        while (npc_index < len(NPC_list)):
+            NPC_list[npc_index].Events_library = NPC_list[npc_index].defineGuidedNPCSchedule();
+            npc_index = npc_index + 1;
+
+    temp_NPCs_at_location = []
     def get_NPCs_at_location(someLocation):
         list_of_NPCs_at_location = []
         npc_index = 0
@@ -110,9 +164,16 @@ init python:
         npc_index = 0
         while (npc_index < len(NPC_list)):
             if (NPC_list[npc_index].Location == "Library"):
-                NPC_list[npc_index].npc_study = 50;
+                #NPC_list[npc_index].npc_study = 50;
+                # changed to prevent study from going down too quickly if NPC is at Residence all night
+                # originally npc_study += (1,3)
+                NPC_list[npc_index].npc_study += renpy.random.randint(2,5)
+                NPC_list[npc_index].npc_social += renpy.random.randint(1,2)
+                NPC_list[npc_index].npc_health -= 20
             elif (NPC_list[npc_index].Location == "Classroom"):
-                NPC_list[npc_index].npc_study += renpy.random.randint(3,5)
+                # changed to prevent study from going down too quickly if NPC is at Residence all night
+                # originally npc_study += (3,5)
+                NPC_list[npc_index].npc_study += renpy.random.randint(4,8)
                 NPC_list[npc_index].npc_health -= renpy.random.randint(5,8)
             elif (NPC_list[npc_index].Location == "Park"):
                 NPC_list[npc_index].npc_health += renpy.random.randint(20,25)
@@ -121,7 +182,7 @@ init python:
                 NPC_list[npc_index].npc_health += 10
             elif (NPC_list[npc_index].Location == "Cafeteria"):
                 NPC_list[npc_index].npc_health += renpy.random.randint(8,10)
-                NPC_list[npc_index].npc_health += renpy.random.randint(5,8)
+                NPC_list[npc_index].npc_social += renpy.random.randint(5,8)
             elif (NPC_list[npc_index].Location == "Residence"):
                 NPC_list[npc_index].npc_study -= 1
                 NPC_list[npc_index].npc_health += 10
