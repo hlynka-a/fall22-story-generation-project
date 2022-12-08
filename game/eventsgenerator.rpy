@@ -21,8 +21,28 @@ init python:
             else:
                 return False
 
+        def eventcheck2(self,e_d,e_hs,e_ms, e_re):
+            temp_tstart = (self.event_hstarts * 100) + self.event_mstatrs;
+            temp_tend = (self.event_hends * 100) + self.event_mends;
+            temp_currenttime = (e_hs * 100) + e_ms;
+            if self.event_day == e_d and temp_tstart <= temp_currenttime and temp_tend > temp_currenttime and self.event_active == False and self.event_regular == e_re:
+                self.event_active = True;
+                return True
+            else:
+                return False
+
         def eventinactive(self, e_d, e_he, e_me, e_re):
             if self.event_day == e_d and self.event_hends == e_he and self.event_mends == e_me and self.event_regular == e_re: 
+                self.event_active = False;
+                return True
+            else:
+                return False
+        
+        def eventinactive2(self,e_d,e_hs,e_ms, e_re):
+            temp_tstart = (self.event_hstarts * 100) + self.event_mstatrs;
+            temp_tend = (self.event_hends * 100) + self.event_mends;
+            temp_currenttime = (e_hs * 100) + e_ms;
+            if self.event_day == e_d and temp_tend <= temp_currenttime and self.event_active == True and self.event_regular == e_re:
                 self.event_active = False;
                 return True
             else:
