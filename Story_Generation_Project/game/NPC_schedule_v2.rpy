@@ -60,7 +60,7 @@ screen NPC_background_screen:
         action [Jump("exit_timer_screen")]
 
 screen NPC_image_v2():
-    zorder 101
+    #zorder 101
     #textbutton "{size=28}{color=#FFF}Exit Test{/color}{/size}":
     #    background "#000"
     #    xpos 1000
